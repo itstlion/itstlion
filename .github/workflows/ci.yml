@@ -1,0 +1,21 @@
+name: CI
+on:
+  pull_request:
+    branches:
+      - 'develop'
+      - 'master'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install all dependencies
+        run: |
+          cd app
+          npm install
+      - name: Build application
+        run: |
+          cd app
+          npm run build
