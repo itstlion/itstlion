@@ -1,21 +1,15 @@
-# Basic Template
+# It's T.Lion
 
 ## Description
 
-This basic template covers all the necessary configuration used by all my repositories on *Github*.
-
-## Usage
-
-Here is the *Github*'s official documentation about [creating a repository from a template][create-repo].
+Official page of the artist _T.Lion_.
 
 ## Versioning
 
-This repository use *Git* as the main versioning tool and follows [*Semantic Versioning*][sem-ver] principles.
+This repository use _Git_ as the main versioning tool and follows [_Semantic Versioning_][sem-ver] principles.
 
 ## Authors
 
-Repository created and maintained by LAMARQUE Loïc (*@LVMVRQUXL* on *Github*).
-
-[create-repo]: https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template
+Repository created and maintained by LAMARQUE Loïc (_@LVMVRQUXL_ on _Github_).
 
 [sem-ver]: https://semver.org/
