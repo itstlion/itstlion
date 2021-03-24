@@ -1,0 +1,19 @@
+#container {
+  display: grid;
+  padding: 2em 0;
+  row-gap: 3em;
+}
+
+.release {
+  padding: 0 3em;
+}
+
+.release-artwork {
+  object-fit: cover;
+}
+
+.release-card {
+  background-color: var(--color-prestige-blue);
+  color: var(--color-anti-flash-white);
+  cursor: pointer;
+}
