@@ -1,10 +1,8 @@
-import { ApiReferenceModel } from './api-reference.model';
+import { ArtistModel } from './artist.model';
 
 export interface ReleaseModel {
+  artists: ArtistModel[];
   id: number;
   name: string;
   releaseDate: string;
-  artists: ApiReferenceModel;
-  streamingLinks: ApiReferenceModel;
-  type: ApiReferenceModel;
 }

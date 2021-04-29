@@ -1,4 +1,4 @@
-<div id="container">
+<div id="container" *ngIf="(releases$ | async) as releases">
   <div class="release" *ngFor="let release of releases">
     <mat-card class="release-card">
       <img
