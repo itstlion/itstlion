@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 
-import { ReleaseModel } from '@app/shared/models';
+import { ArtistModel, ReleaseModel } from '@app/shared/models';
 import { environment } from '@environments/environment';
 
 @Injectable()
@@ -11,7 +10,11 @@ export class ReleasesService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getAllReleases(): Observable<ReleaseModel[]> {
-    return this.httpClient.get<ReleaseModel[]>(this.baseUrl);
+  getAllArtistsOfARelease(release: ReleaseModel): Promise<ArtistModel[]> {
+    return this.httpClient.get<ArtistModel[]>(release.artists.ref).toPromise();
+  }
+
+  getAllReleases(): Promise<ReleaseModel[]> {
+    return this.httpClient.get<ReleaseModel[]>(this.baseUrl).toPromise();
   }
 }

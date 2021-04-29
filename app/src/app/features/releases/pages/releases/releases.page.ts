@@ -1,8 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 
 import { ReleasesService } from '@app/core/services';
-import { ReleaseModel } from '@app/shared/models';
+import {
+  ApiReferenceModel,
+  ArtistModel,
+  ReleaseModel
+} from '@app/shared/models';
+
+// TODO: Extract this class
+// TODO: Separate DTOs from Models
+// TODO: Build this class with a builder pattern
+class Release {
+  artists: ArtistModel[];
+  id: number;
+  name: string;
+  releaseDate: string;
+  streamingLinks: ApiReferenceModel;
+  type: ApiReferenceModel;
+
+  constructor(model: ReleaseModel) {
+    this.id = model.id;
+    this.name = model.name;
+    this.releaseDate = model.releaseDate;
+  }
+}
 
 @Component({
   selector: 'app-releases',
@@ -10,7 +31,7 @@ import { ReleaseModel } from '@app/shared/models';
   templateUrl: './releases.page.html'
 })
 export class ReleasesComponent implements OnInit {
-  releases$: Observable<ReleaseModel[]>;
+  releases: Release[];
 
   constructor(private service: ReleasesService) {}
 
@@ -18,7 +39,23 @@ export class ReleasesComponent implements OnInit {
     this.retrieveReleases();
   }
 
-  private retrieveReleases(): void {
-    this.releases$ = this.service.getAllReleases();
+  private mapModelToRelease(model: ReleaseModel): Release {
+    const release: Release = new Release(model);
+    this.retrieveArtistsOfRelease(model, release);
+    return release;
+  }
+
+  private async retrieveArtistsOfRelease(
+    model: ReleaseModel,
+    release: Release
+  ): Promise<void> {
+    release.artists = await this.service.getAllArtistsOfARelease(model);
+  }
+
+  private async retrieveReleases(): Promise<void> {
+    const models: ReleaseModel[] = await this.service.getAllReleases();
+    this.releases = models.map(
+      (model: ReleaseModel): Release => this.mapModelToRelease(model)
+    );
   }
 }
