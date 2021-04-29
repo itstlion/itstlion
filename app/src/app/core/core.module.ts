@@ -1,8 +1,10 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
-import { NotificationService } from './services';
+import { NotificationService, ReleasesService } from './services';
 
 @NgModule({
-  providers: [NotificationService]
+  imports: [HttpClientModule],
+  providers: [NotificationService, ReleasesService]
 })
 export class CoreModule {}

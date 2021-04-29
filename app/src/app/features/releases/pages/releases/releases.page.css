@@ -1,5 +1,9 @@
-#container {
+#container,
+.release-info {
   display: grid;
+}
+
+#container {
   padding: 2em 0;
   row-gap: 3em;
 }
@@ -16,6 +20,14 @@
   background-color: var(--color-prestige-blue);
   color: var(--color-anti-flash-white);
   cursor: pointer;
+}
+
+.release-info {
+  grid-template-columns: 1fr 1fr;
+}
+
+.release-type {
+  text-align: end;
 }
 
 /* TABLET */

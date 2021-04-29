@@ -1,6 +1,5 @@
-<div id="container">
-  <!-- TODO: Refactor this messy code -->
-  <div class="release">
+<div id="container" *ngIf="(releases$ | async) as releases">
+  <div class="release" *ngFor="let release of releases">
     <mat-card class="release-card">
       <img
         class="release-artwork"
@@ -8,60 +7,15 @@
         src="assets/images/releases/Forgotten Dreams.jpg"
       />
       <mat-card-content>
-        <mat-card-title>Release</mat-card-title>
-        <mat-card-subtitle>T.Lion</mat-card-subtitle>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="release">
-    <mat-card class="release-card">
-      <img
-        class="release-artwork"
-        mat-card-image
-        src="assets/images/releases/Forgotten Dreams.jpg"
-      />
-      <mat-card-content>
-        <mat-card-title>Release</mat-card-title>
-        <mat-card-subtitle>T.Lion</mat-card-subtitle>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="release">
-    <mat-card class="release-card">
-      <img
-        class="release-artwork"
-        mat-card-image
-        src="assets/images/releases/Forgotten Dreams.jpg"
-      />
-      <mat-card-content>
-        <mat-card-title>Release</mat-card-title>
-        <mat-card-subtitle>T.Lion</mat-card-subtitle>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="release">
-    <mat-card class="release-card">
-      <img
-        class="release-artwork"
-        mat-card-image
-        src="assets/images/releases/Forgotten Dreams.jpg"
-      />
-      <mat-card-content>
-        <mat-card-title>Release</mat-card-title>
-        <mat-card-subtitle>T.Lion</mat-card-subtitle>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="release">
-    <mat-card class="release-card">
-      <img
-        class="release-artwork"
-        mat-card-image
-        src="assets/images/releases/Forgotten Dreams.jpg"
-      />
-      <mat-card-content>
-        <mat-card-title>Release</mat-card-title>
-        <mat-card-subtitle>T.Lion</mat-card-subtitle>
+        <mat-card-title>{{ release.name }}</mat-card-title>
+        <mat-card-subtitle>
+          <div class="release-info">
+            <!-- TODO: Retrieve artists from API -->
+            <span>T.Lion</span>
+            <!-- TODO: Retrieve release's type from API -->
+            <span class="release-type">EP</span>
+          </div>
+        </mat-card-subtitle>
       </mat-card-content>
     </mat-card>
   </div>
