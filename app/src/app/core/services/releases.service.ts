@@ -1,9 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { ArtistModel, ReleaseModel } from '@app/shared/models';
+import {
+  ArtistModel,
+  ReleaseModel,
+  ReleaseTypeModel
+} from '@app/shared/models';
 import { environment } from '@environments/environment';
-import { ArtistDTO, ReleaseDTO } from '../dtos';
+import { ArtistDTO, ReleaseDTO, ReleaseTypeDTO } from '../dtos';
 
 @Injectable()
 export class ReleasesService {
@@ -26,23 +30,28 @@ export class ReleasesService {
     const artists: ArtistDTO[] = await this.httpClient
       .get<ArtistDTO[]>(release.artists.ref)
       .toPromise();
-    return artists.map(
-      (dto: ArtistDTO): ArtistModel => ({ id: dto.id, name: dto.name })
-    );
+    return artists.map((dto: ArtistDTO): ArtistModel => new ArtistModel(dto));
+  }
+
+  private async getTypeOfARelease(
+    release: ReleaseDTO
+  ): Promise<ReleaseTypeModel> {
+    const type: ReleaseTypeDTO = await this.httpClient
+      .get<ReleaseTypeDTO>(release.type.ref)
+      .toPromise();
+    return new ReleaseTypeModel(type);
   }
 
   private mapReleaseDTOToModel(release: ReleaseDTO): ReleaseModel {
-    const model: ReleaseModel = {
-      artists: [],
-      id: release.id,
-      name: release.name,
-      releaseDate: release.releaseDate
-    };
+    const model: ReleaseModel = new ReleaseModel(release);
     this.getAllArtistsOfARelease(release).then(
       (artists: ArtistModel[]): void => {
         model.artists = artists;
       }
     );
+    this.getTypeOfARelease(release).then((type: ReleaseTypeModel): void => {
+      model.type = type.type;
+    });
     return model;
   }
 }
