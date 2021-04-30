@@ -1,8 +1,12 @@
 import { ReleaseDTO } from '@app/core/dtos';
 import { ArtistModel } from './artist.model';
 
+const ARTWORK_BASE_PATH: string = 'assets/images/releases';
+const ARTWORK_FORMAT: string = '.jpg';
+
 export class ReleaseModel {
   artists: ArtistModel[];
+  artwork: string;
   id: number;
   name: string;
   releaseDate: string;
@@ -12,5 +16,15 @@ export class ReleaseModel {
     this.id = dto.id;
     this.name = dto.name;
     this.releaseDate = dto.releaseDate;
+    this.initArtwork();
+  }
+
+  private initArtwork(): void {
+    let releaseName: string = this.transformName();
+    this.artwork = `${ARTWORK_BASE_PATH}/${releaseName}${ARTWORK_FORMAT}`;
+  }
+
+  private transformName(): string {
+    return this.name.toLowerCase().split(' ').join('-');
   }
 }
