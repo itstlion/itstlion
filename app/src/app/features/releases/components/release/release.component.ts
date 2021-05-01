@@ -13,11 +13,4 @@ export class ReleaseComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  getArtists(): string {
-    const separator: string = ', ';
-    return this.release.artists
-      .map((artist: ArtistModel): string => artist.name)
-      .join(separator);
-  }
 }

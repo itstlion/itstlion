@@ -5,18 +5,25 @@ const ARTWORK_BASE_PATH: string = 'assets/images/releases';
 const ARTWORK_FORMAT: string = '.jpg';
 
 export class ReleaseModel {
-  artists: ArtistModel[];
+  artists?: ArtistModel[];
   artwork: string;
   id: number;
   name: string;
   releaseDate: string;
-  type: string;
+  type?: string;
 
   constructor(dto: ReleaseDTO) {
     this.id = dto.id;
     this.name = dto.name;
     this.releaseDate = dto.releaseDate;
     this.initArtwork();
+  }
+
+  getArtists(): string {
+    const separator: string = ', ';
+    return this.artists
+      ?.map((artist: ArtistModel): string => artist.name)
+      .join(separator);
   }
 
   private initArtwork(): void {
