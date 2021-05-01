@@ -1,16 +1,20 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 
-import { ArtistModel, ReleaseModel } from '@app/shared/models';
+import { ReleaseModel } from '@app/shared/models';
+import { StreamingLinksComponent } from '../streaming-links';
 
 @Component({
   selector: 'app-release',
   styleUrls: ['./release.component.css'],
   templateUrl: './release.component.html'
 })
-export class ReleaseComponent implements OnInit {
+export class ReleaseComponent {
   @Input() release: ReleaseModel;
 
-  constructor() {}
+  constructor(private bottomSheet: MatBottomSheet) {}
 
-  ngOnInit(): void {}
+  openStreamingLinksBottomSheet(): void {
+    this.bottomSheet.open(StreamingLinksComponent);
+  }
 }
