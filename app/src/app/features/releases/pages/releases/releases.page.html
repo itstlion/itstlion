@@ -5,11 +5,15 @@
       <mat-card-content>
         <mat-card-title>{{ release.name }}</mat-card-title>
         <mat-card-subtitle>
-          <span *ngFor="let artist of release.artists">
-            <span *ngIf="artist !== release.artists[0]">, </span>
-            <span>{{ artist.name }}</span>
-          </span>
-          <span> &#183; {{ release.type }}</span>
+          <div class="release-info">
+            <div>
+              <span *ngFor="let artist of release.artists">
+                <span *ngIf="artist !== release.artists[0]">, </span>
+                <span>{{ artist.name }}</span>
+              </span>
+            </div>
+            <span class="release-type">{{ release.type }}</span>
+          </div>
         </mat-card-subtitle>
       </mat-card-content>
     </mat-card>
