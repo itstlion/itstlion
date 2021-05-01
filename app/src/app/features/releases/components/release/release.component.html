@@ -1,5 +1,9 @@
 <mat-card class="release-card" (click)="openStreamingLinksBottomSheet()">
-  <img class="release-artwork" mat-card-image src="{{ release.artwork }}" />
+  <img
+    class="release-artwork"
+    mat-card-image
+    src="{{ release.getArtwork() }}"
+  />
   <mat-card-content>
     <mat-card-title class="release-name">{{ release.name }}</mat-card-title>
     <mat-card-subtitle>

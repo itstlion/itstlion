@@ -1,4 +1,5 @@
-export interface ReleaseTypeDTO {
-  id: number;
-  type: string;
+export enum ReleaseTypeDTO {
+  ALBUM = 'ALBUM',
+  EP = 'EP',
+  SINGLE = 'SINGLE'
 }

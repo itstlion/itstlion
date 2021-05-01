@@ -1,22 +1,21 @@
 import { ReleaseDTO } from '@app/core/dtos';
 import { ArtistModel } from './artist.model';
+import { ReleaseTypeModel } from './release-type.model';
 
 const ARTWORK_BASE_PATH: string = 'assets/images/releases';
 const ARTWORK_FORMAT: string = '.jpg';
 
 export class ReleaseModel {
   artists?: ArtistModel[];
-  artwork: string;
   id: number;
   name: string;
   releaseDate: string;
-  type?: string;
+  type?: ReleaseTypeModel;
 
   constructor(dto: ReleaseDTO) {
     this.id = dto.id;
     this.name = dto.name;
     this.releaseDate = dto.releaseDate;
-    this.initArtwork();
   }
 
   getArtists(): string {
@@ -26,13 +25,13 @@ export class ReleaseModel {
       .join(separator);
   }
 
-  private initArtwork(): void {
+  getArtwork(): string {
     const splitSeparator: string = ' ';
     const joinSeparator: string = '-';
     const releaseName: string = this.name
       .toLowerCase()
       .split(splitSeparator)
       .join(joinSeparator);
-    this.artwork = `${ARTWORK_BASE_PATH}/${releaseName}${ARTWORK_FORMAT}`;
+    return `${ARTWORK_BASE_PATH}/${releaseName}${ARTWORK_FORMAT}`;
   }
 }

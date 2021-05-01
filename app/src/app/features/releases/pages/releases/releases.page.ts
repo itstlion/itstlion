@@ -14,10 +14,10 @@ export class ReleasesPage implements OnInit {
   constructor(private service: ReleasesService) {}
 
   ngOnInit(): void {
-    this.retrieveReleases();
+    this.getReleases();
   }
 
-  private retrieveReleases(): void {
-    this.releases$ = this.service.getAllReleases();
+  private getReleases(): void {
+    this.releases$ = this.service.getReleases();
   }
 }

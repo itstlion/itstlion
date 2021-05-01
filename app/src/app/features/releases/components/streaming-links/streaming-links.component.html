@@ -1,2 +1,10 @@
-<!-- TODO: Not implemented yet -->
-hello world!
+<span>Listen to {{ release.name }}</span>
+<mat-nav-list *ngIf="streamingLinks$ | async as streamingLinks">
+  <a
+    mat-list-item
+    *ngFor="let streamingLink of streamingLinks"
+    (click)="openStreamingLink(streamingLink)"
+  >
+    <span mat-line>{{ streamingLink.platform }}</span>
+  </a>
+</mat-nav-list>
