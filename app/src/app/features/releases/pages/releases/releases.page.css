@@ -12,6 +12,10 @@
   padding: 0 3em;
 }
 
+.release-artists {
+  color: var(--color-city-lights);
+}
+
 .release-artwork {
   object-fit: cover;
 }
@@ -27,6 +31,7 @@
 }
 
 .release-type {
+  color: var(--color-peace);
   text-align: end;
 }
 

@@ -6,7 +6,7 @@
         <mat-card-title>{{ release.name }}</mat-card-title>
         <mat-card-subtitle>
           <div class="release-info">
-            <div>
+            <div class="release-artists">
               <span *ngFor="let artist of release.artists">
                 <span *ngIf="artist !== release.artists[0]">, </span>
                 <span>{{ artist.name }}</span>
