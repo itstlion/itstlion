@@ -20,11 +20,12 @@ export class ReleaseModel {
   }
 
   private initArtwork(): void {
-    let releaseName: string = this.transformName();
+    const splitSeparator: string = ' ';
+    const joinSeparator: string = '-';
+    const releaseName: string = this.name
+      .toLowerCase()
+      .split(splitSeparator)
+      .join(joinSeparator);
     this.artwork = `${ARTWORK_BASE_PATH}/${releaseName}${ARTWORK_FORMAT}`;
-  }
-
-  private transformName(): string {
-    return this.name.toLowerCase().split(' ').join('-');
   }
 }

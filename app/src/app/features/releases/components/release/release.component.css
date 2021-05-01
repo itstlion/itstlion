@@ -1,0 +1,23 @@
+.release-artists {
+  color: var(--color-city-lights);
+}
+
+.release-artwork {
+  object-fit: cover;
+}
+
+.release-card {
+  background-color: var(--color-prestige-blue);
+  color: var(--color-anti-flash-white);
+  cursor: pointer;
+}
+
+.release-info {
+  display: grid;
+  grid-template-columns: 75% 25%;
+}
+
+.release-type {
+  color: var(--color-peace);
+  text-align: end;
+}

@@ -1,21 +1,5 @@
 <div id="container" *ngIf="(releases$ | async) as releases">
-  <div class="release" *ngFor="let release of releases">
-    <mat-card class="release-card">
-      <img class="release-artwork" mat-card-image src="{{release.artwork}}" />
-      <mat-card-content>
-        <mat-card-title>{{ release.name }}</mat-card-title>
-        <mat-card-subtitle>
-          <div class="release-info">
-            <div class="release-artists">
-              <span *ngFor="let artist of release.artists">
-                <span *ngIf="artist !== release.artists[0]">, </span>
-                <span>{{ artist.name }}</span>
-              </span>
-            </div>
-            <span class="release-type">{{ release.type }}</span>
-          </div>
-        </mat-card-subtitle>
-      </mat-card-content>
-    </mat-card>
+  <div class="release-container" *ngFor="let release of releases">
+    <app-release [release]="release"></app-release>
   </div>
 </div>

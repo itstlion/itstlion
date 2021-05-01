@@ -1,38 +1,11 @@
-#container,
-.release-info {
-  display: grid;
-}
-
 #container {
+  display: grid;
   padding: 2em 0;
   row-gap: 3em;
 }
 
-.release {
+.release-container {
   padding: 0 3em;
-}
-
-.release-artists {
-  color: var(--color-city-lights);
-}
-
-.release-artwork {
-  object-fit: cover;
-}
-
-.release-card {
-  background-color: var(--color-prestige-blue);
-  color: var(--color-anti-flash-white);
-  cursor: pointer;
-}
-
-.release-info {
-  grid-template-columns: 75% 25%;
-}
-
-.release-type {
-  color: var(--color-peace);
-  text-align: end;
 }
 
 /* TABLET */
@@ -43,7 +16,7 @@
     padding: 2em 3em;
   }
 
-  .release {
+  .release-container {
     padding: 0;
   }
 }

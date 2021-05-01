@@ -8,7 +8,7 @@ import { ReleaseModel } from '@app/shared/models';
   styleUrls: ['./releases.page.css'],
   templateUrl: './releases.page.html'
 })
-export class ReleasesComponent implements OnInit {
+export class ReleasesPage implements OnInit {
   releases$: Promise<ReleaseModel[]>;
 
   constructor(private service: ReleasesService) {}
