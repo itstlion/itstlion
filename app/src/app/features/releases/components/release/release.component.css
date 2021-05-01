@@ -17,6 +17,10 @@
   grid-template-columns: 75% 25%;
 }
 
+.release-name {
+  font-size: 1em;
+}
+
 .release-type {
   color: var(--color-peace);
   text-align: end;
