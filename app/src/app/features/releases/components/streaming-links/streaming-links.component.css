@@ -1,9 +1,26 @@
-#container {
-  display: grid;
+#container,
+.streaming-platform {
+  display: grid !important;
+}
+
+.spotify,
+.youtube-music {
+  width: 2em !important;
 }
 
 .streaming-platform {
+  align-items: center;
   color: var(--color-white);
+  grid-template-columns: 80% 20%;
+}
+
+.streaming-platform-logo {
+  width: 3em;
+}
+
+.streaming-platform-logo-container {
+  display: flex;
+  justify-content: center;
 }
 
 #subtitle {

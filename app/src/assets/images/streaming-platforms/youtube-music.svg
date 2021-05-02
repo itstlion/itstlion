@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg preserveAspectRatio="xMinYMin" version="1.1" viewBox="0 0 192 192" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+	<circle cx="96" cy="96" r="88" fill="#f00"/>
+		<path d="m96 54.04c23.14 0 41.96 18.82 41.96 41.96s-18.82 41.96-41.96 41.96-41.96-18.82-41.96-41.96 18.82-41.96 41.96-41.96m0-4.04c-25.41 0-46 20.59-46 46s20.59 46 46 46 46-20.59 46-46-20.59-46-46-46z" fill="#fff"/>
+	<polygon points="80 119 119 95 80 73" fill="#fff"/>
+</svg>
