@@ -1,5 +1,5 @@
 .release-artists {
-  color: var(--color-city-lights);
+  color: var(--color-soft-blue-light);
 }
 
 .release-artwork {
@@ -7,8 +7,8 @@
 }
 
 .release-card {
-  background-color: var(--color-prestige-blue);
-  color: var(--color-anti-flash-white);
+  background-color: var(--color-grey-800);
+  color: var(--color-white);
   cursor: pointer;
 }
 
@@ -22,6 +22,6 @@
 }
 
 .release-type {
-  color: var(--color-peace);
+  color: var(--color-soft-blue);
   text-align: end;
 }

@@ -1,6 +1,7 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 body {
+  background-color: var(--color-dark-grey);
   border: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   margin: 0;
@@ -12,16 +13,21 @@ html {
   height: 100%;
 }
 
-body,
-.white-dialog > .mat-dialog-container {
-  background-color: var(--color-city-lights);
+.dark-bottom-sheet {
+  background-color: var(--color-grey-800);
+  color: var(--color-white);
 }
 
 :root {
-  --color-anti-flash-white: #f1f2f6;
-  --color-city-lights: #dfe4ea;
-  --color-peace: #a4b0be;
-  --color-prestige-blue: #2f3542;
+  --color-black: #000000;
+  --color-dark-blue: #2f3542;
+  --color-dark-grey: #121212;
+  --color-grey-700: #515151;
+  --color-grey-800: #333333;
+  --color-soft-blue: #a4b0be;
+  --color-soft-blue-light: #dfe4ea;
+  --color-transparent: #00000000;
+  --color-white: #f1f2f6;
 }
 
 simple-snack-bar span {
@@ -30,7 +36,7 @@ simple-snack-bar span {
 }
 
 snack-bar-container.notification {
-  background-color: var(--color-prestige-blue);
-  color: var(--color-anti-flash-white);
+  background-color: var(--color-grey-800);
+  color: var(--color-white);
   font-weight: 400;
 }

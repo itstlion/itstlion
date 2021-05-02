@@ -15,6 +15,9 @@ export class ReleaseComponent {
   constructor(private bottomSheet: MatBottomSheet) {}
 
   openStreamingLinksBottomSheet(): void {
-    this.bottomSheet.open(StreamingLinksComponent, { data: this.release });
+    this.bottomSheet.open(StreamingLinksComponent, {
+      data: this.release,
+      panelClass: ['dark-bottom-sheet']
+    });
   }
 }

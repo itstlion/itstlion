@@ -1,0 +1,22 @@
+#container {
+  display: grid;
+}
+
+.streaming-platform {
+  color: var(--color-white);
+}
+
+#subtitle {
+  color: var(--color-soft-blue);
+  padding-top: 0.25em;
+}
+
+#title {
+  font-size: 1.25em;
+}
+
+#title-container {
+  display: grid;
+  padding-top: 1em;
+  text-align: center;
+}
