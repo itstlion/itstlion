@@ -34,3 +34,10 @@
     grid-template-columns: repeat(5, 1fr);
   }
 }
+
+/* WIDER LAPTOPS */
+@media only screen and (min-width: 1441px) {
+  .release-container {
+    padding: 0 2em;
+  }
+}

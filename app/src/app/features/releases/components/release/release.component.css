@@ -1,15 +1,15 @@
-.release-artists {
-  color: var(--color-soft-blue-light);
-}
-
-.release-artwork {
-  object-fit: cover;
-}
-
-.release-card {
+mat-card {
   background-color: var(--color-grey-800);
   color: var(--color-white);
   cursor: pointer;
+}
+
+mat-card > img {
+  object-fit: cover;
+}
+
+.release-artists {
+  color: var(--color-soft-blue-light);
 }
 
 .release-info {
