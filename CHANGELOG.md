@@ -1,4 +1,4 @@
-# Basic Template - Changelog
+# It's T.Lion - Changelog
 
 All notable changes to this project will be documented in this file.
 
@@ -11,18 +11,25 @@ All notable changes to this project will be documented in this file.
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities.
 
-Visit [*Keep a Changelog*][changelog] for more information.
+Visit [_Keep a Changelog_][changelog] for more information.
 
 ## List of releases
 
+- [Version 1.0.0](#v1.0.0) - 2021/05/03
 - [Version 0.1.0](#v0.1.0) - 2021/01/13
+
+## Version 1.0.0 <a name="v1.0.0"></a>
+
+### Added
+
+- Release listing page
 
 ## Version 0.1.0 <a name="v0.1.0"></a>
 
 ### Added
 
-- *Git* workflow
-- Pull request and issue templates for *Github* repository
-- Continuous Delivery (CD) scripts for staging and production environments with *Github Actions*
+- _Git_ workflow
+- Pull request and issue templates for _Github_ repository
+- Continuous Delivery (CD) scripts for staging and production environments with _Github Actions_
 
 [changelog]: https://keepachangelog.com/en/1.1.0/
