@@ -1,0 +1,23 @@
+<div id="container">
+  <div id="title-container">
+    <span id="title">{{ release.name }}</span>
+    <span id="subtitle">Choose a platform</span>
+  </div>
+  <mat-nav-list *ngIf="streamingLinks$ | async as streamingLinks">
+    <a
+      mat-list-item
+      *ngFor="let streamingLink of streamingLinks"
+      (click)="openStreamingLink(streamingLink)"
+    >
+      <div class="streaming-platform" mat-line>
+        <span>{{ streamingLink.platform }}</span>
+        <div id="streaming-platform-logo">
+          <img
+            [ngClass]="streamingLink.getPlatformInLowerCase()"
+            src="{{ streamingLink.getLogo() }}"
+          />
+        </div>
+      </div>
+    </a>
+  </mat-nav-list>
+</div>

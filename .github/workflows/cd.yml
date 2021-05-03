@@ -5,15 +5,45 @@ on:
       - 'master'
 
 jobs:
-  tag:
+  build_and_deploy:
     runs-on: ubuntu-latest
     env:
-      GIT_USER_EMAIL: ${{ secrets.GIT_USER_EMAIL }}
-      GIT_USER_NAME: ${{ secrets.GIT_USER_NAME }}
+      HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
+      HEROKU_PROCESS_TYPE: web
+      HEROKU_REGISTRY: ${{ secrets.HEROKU_REGISTRY }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Retrieve application's version
+        run: |
+          VERSION=`sed -nE 's/^\s*"version": "(.*?)",$/\1/p' ./app/package.json`
+          echo "APP_VERSION=$VERSION" >> $GITHUB_ENV
+      - name: Build Docker image
+        run: docker build -t "itstlion:$APP_VERSION" .
+        working-directory: ./app
+      - name: Login to Heroku Registry
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: docker login -u _ -p $HEROKU_API_KEY $HEROKU_REGISTRY
+        working-directory: ./app
+      - name: Prepare Docker image for Heroku Registry
+        run: docker tag "itstlion:$APP_VERSION" "$HEROKU_REGISTRY/$HEROKU_APP_NAME/$HEROKU_PROCESS_TYPE"
+        working-directory: ./app
+      - name: Push Docker image to Heroku Registry
+        run: docker push "$HEROKU_REGISTRY/$HEROKU_APP_NAME/$HEROKU_PROCESS_TYPE"
+        working-directory: ./app
+      - name: Logout from Heroku Registry
+        run: docker logout $HEROKU_REGISTRY
+        working-directory: ./app
+  tag:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Set Git identity
+        env:
+          GIT_USER_EMAIL: ${{ secrets.GIT_USER_EMAIL }}
+          GIT_USER_NAME: ${{ secrets.GIT_USER_NAME }}
         run: |
           git config user.email "$GIT_USER_EMAIL"
           git config user.name "$GIT_USER_NAME"
@@ -23,32 +53,23 @@ jobs:
           git tag -a "v$VERSION-rc" -m "Release candidate v$VERSION"
       - name: Push tag to repository
         run: git push --tags origin
-  deploy-heroku:
-    needs: tag
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Deploy to Heroku
-        uses: akhileshns/heroku-deploy@v3.8.8
-        with:
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
-          heroku_email: ${{ secrets.HEROKU_EMAIL }}
-          appdir: 'app'
-          usedocker: true
   draft-release:
-    needs: deploy-heroku
+    needs:
+      - build_and_deploy
+      - tag
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Retrieve application's version
+        run: |
+          VERSION=`sed -nE 's/^\s*"version": "(.*?)",$/\1/p' ./app/package.json`
+          echo "APP_VERSION=$VERSION" >> $GITHUB_ENV
       - name: Create release
-        id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         uses: actions/create-release@v1
         with:
-          tag_name: v<VERSION>
-          release_name: Release v<VERSION>
+          tag_name: v${{ env.APP_VERSION }}
+          release_name: Release v${{ env.APP_VERSION }}
           draft: true

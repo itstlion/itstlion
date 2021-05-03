@@ -1,0 +1,39 @@
+#container,
+.streaming-platform {
+  display: grid !important;
+}
+
+.spotify,
+.youtube-music {
+  width: 2em !important;
+}
+
+.streaming-platform {
+  align-items: center;
+  color: var(--color-white);
+  grid-template-columns: 80% 20%;
+}
+
+#streaming-platform-logo {
+  display: flex;
+  justify-content: center;
+}
+
+#streaming-platform-logo > img {
+  width: 3em;
+}
+
+#subtitle {
+  color: var(--color-soft-blue);
+  padding-top: 0.25em;
+}
+
+#title {
+  font-size: 1.25em;
+}
+
+#title-container {
+  display: grid;
+  padding-top: 1em;
+  text-align: center;
+}
