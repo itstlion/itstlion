@@ -54,8 +54,9 @@ export class ReleasesService {
   private async getArtistsOfRelease(
     release: ReleaseDTO
   ): Promise<ArtistModel[]> {
+    const url: string = `${environment.apiUrl}/${release.artists.ref}`;
     const artists: ArtistDTO[] = await this.httpClient
-      .get<ArtistDTO[]>(release.artists.ref)
+      .get<ArtistDTO[]>(url)
       .toPromise();
     return artists.map((dto: ArtistDTO): ArtistModel => new ArtistModel(dto));
   }
@@ -63,8 +64,9 @@ export class ReleasesService {
   private async getTypeOfRelease(
     release: ReleaseDTO
   ): Promise<ReleaseTypeModel> {
+    const url: string = `${environment.apiUrl}/${release.type.ref}`;
     const type: ReleaseTypeDTO = await this.httpClient
-      .get<ReleaseTypeDTO>(release.type.ref)
+      .get<ReleaseTypeDTO>(url)
       .toPromise();
     return ReleaseTypeModel[type];
   }
