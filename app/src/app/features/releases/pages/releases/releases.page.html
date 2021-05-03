@@ -1,0 +1,5 @@
+<div id="container" *ngIf="(releases$ | async) as releases">
+  <div class="release-container" *ngFor="let release of releases">
+    <app-release [release]="release"></app-release>
+  </div>
+</div>
