@@ -1,0 +1,27 @@
+mat-card {
+  background-color: var(--color-grey-800);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+mat-card > img {
+  object-fit: cover;
+}
+
+mat-card-subtitle > div {
+  display: grid;
+  grid-template-columns: 75% 25%;
+}
+
+mat-card-title {
+  font-size: 1em;
+}
+
+.release-artists {
+  color: var(--color-soft-blue-light);
+}
+
+.release-type {
+  color: var(--color-soft-blue);
+  text-align: end;
+}
