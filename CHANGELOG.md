@@ -15,8 +15,15 @@ Visit [_Keep a Changelog_][changelog] for more information.
 
 ## List of releases
 
+- [Version 1.0.1](#v1.0.1) - 2021/05/03
 - [Version 1.0.0](#v1.0.0) - 2021/05/03
 - [Version 0.1.0](#v0.1.0) - 2021/01/13
+
+## Version 1.0.1 <a name="v1.0.1"></a>
+
+### Fixed
+
+- Fix HTTPS/HTTP request mixing by updating services after API fixing
 
 ## Version 1.0.0 <a name="v1.0.0"></a>
 
