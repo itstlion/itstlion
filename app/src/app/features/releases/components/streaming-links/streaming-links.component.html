@@ -11,9 +11,8 @@
     >
       <div class="streaming-platform" mat-line>
         <span>{{ streamingLink.platform }}</span>
-        <div class="streaming-platform-logo-container">
+        <div id="streaming-platform-logo">
           <img
-            class="streaming-platform-logo"
             [ngClass]="streamingLink.getPlatformInLowerCase()"
             src="{{ streamingLink.getLogo() }}"
           />

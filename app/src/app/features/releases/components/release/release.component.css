@@ -8,17 +8,17 @@ mat-card > img {
   object-fit: cover;
 }
 
-.release-artists {
-  color: var(--color-soft-blue-light);
-}
-
-.release-info {
+mat-card-subtitle > div {
   display: grid;
   grid-template-columns: 75% 25%;
 }
 
-.release-name {
+mat-card-title {
   font-size: 1em;
+}
+
+.release-artists {
+  color: var(--color-soft-blue-light);
 }
 
 .release-type {

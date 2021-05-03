@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css'],
   templateUrl: './header.component.html'
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  appName: string = "It's T.Lion";
+}

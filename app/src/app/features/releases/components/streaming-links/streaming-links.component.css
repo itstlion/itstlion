@@ -14,13 +14,13 @@
   grid-template-columns: 80% 20%;
 }
 
-.streaming-platform-logo {
-  width: 3em;
-}
-
-.streaming-platform-logo-container {
+#streaming-platform-logo {
   display: flex;
   justify-content: center;
+}
+
+#streaming-platform-logo > img {
+  width: 3em;
 }
 
 #subtitle {
