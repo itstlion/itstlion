@@ -1,13 +1,13 @@
 <div id="container">
   <div id="title-container">
-    <span id="title">{{ release.name }}</span>
+    <span id="title">{{ data.release.name }}</span>
     <span id="subtitle">Choose a platform</span>
   </div>
-  <mat-nav-list *ngIf="streamingLinks$ | async as streamingLinks">
+  <mat-nav-list>
     <a
-      mat-list-item
-      *ngFor="let streamingLink of streamingLinks"
       (click)="openStreamingLink(streamingLink)"
+      mat-list-item
+      *ngFor="let streamingLink of data.streamingLinks"
     >
       <div class="streaming-platform" mat-line>
         <span>{{ streamingLink.platform }}</span>
