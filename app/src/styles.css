@@ -18,6 +18,11 @@ html {
   color: var(--color-white);
 }
 
+.mat-spinner circle {
+  stroke: var(--color-grey-700);
+  stroke-width: 7% !important;
+}
+
 :root {
   --color-black: #000000;
   --color-dark-blue: #2f3542;

@@ -1,5 +1,13 @@
-<div id="container" *ngIf="(releases$ | async) as releases">
+<div
+  id="releases-container"
+  *ngIf="(releases$ | async) as releases; else loading"
+>
   <div class="release-container" *ngFor="let release of releases">
     <app-release [release]="release"></app-release>
   </div>
 </div>
+<ng-template #loading>
+  <div id="spinner-container">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
