@@ -1,36 +1,49 @@
-#container {
+.release-container {
+  padding: 0 3em;
+}
+
+#releases-container {
   display: grid;
   padding: 2em 0;
   row-gap: 3em;
 }
 
-.release-container {
-  padding: 0 3em;
+#reload-container > button {
+  border-color: var(--color-grey-700);
+  color: var(--color-grey-700);
+  font-size: 2em;
+  height: 2em;
+}
+
+#reload-container,
+#spinner-container {
+  display: flex;
+  justify-content: center;
 }
 
 /* TABLET */
 @media only screen and (min-width: 426px) {
-  #container {
+  .release-container {
+    padding: 0;
+  }
+
+  #releases-container {
     column-gap: 3em;
     grid-template-columns: repeat(2, 1fr);
     padding: 2em 3em;
-  }
-
-  .release-container {
-    padding: 0;
   }
 }
 
 /* LAPTOP */
 @media only screen and (min-width: 769px) {
-  #container {
+  #releases-container {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 /* LAPTOP L */
 @media only screen and (min-width: 1025px) {
-  #container {
+  #releases-container {
     grid-template-columns: repeat(5, 1fr);
   }
 }
