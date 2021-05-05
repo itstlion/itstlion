@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ReleasesService } from '@app/core/services';
+import { NotificationService, ReleasesService } from '@app/core/services';
 import { ReleaseModel } from '@app/shared/models';
 
 @Component({
@@ -9,15 +9,31 @@ import { ReleaseModel } from '@app/shared/models';
   templateUrl: './releases.page.html'
 })
 export class ReleasesPage implements OnInit {
+  isLoadingData: boolean;
   releases$: Promise<ReleaseModel[]>;
 
-  constructor(private service: ReleasesService) {}
+  constructor(
+    private notificationService: NotificationService,
+    private releasesService: ReleasesService
+  ) {}
 
   ngOnInit(): void {
     this.getReleases();
   }
 
+  reloadData(): void {
+    this.getReleases();
+  }
+
+  private catchReleasesRetrieving(): void {
+    this.isLoadingData = false;
+    const content: string = 'Unable to fetch data from server!';
+    this.notificationService.notifyError(content);
+  }
+
   private getReleases(): void {
-    this.releases$ = this.service.getReleases();
+    this.isLoadingData = true;
+    this.releases$ = this.releasesService.getReleases();
+    this.releases$.catch((): void => this.catchReleasesRetrieving());
   }
 }
