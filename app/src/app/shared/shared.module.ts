@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
 import { MatListModule } from '@angular/material/list';
@@ -14,6 +15,7 @@ import { HeaderComponent } from './components';
   exports: [
     HeaderComponent,
     MatBottomSheetModule,
+    MatButtonModule,
     MatCardModule,
     MatListModule,
     MatProgressSpinnerModule,

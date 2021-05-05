@@ -7,7 +7,12 @@
   </div>
 </div>
 <ng-template #loading>
-  <div id="spinner-container">
+  <div id="spinner-container" *ngIf="isLoadingData; else reload">
     <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+<ng-template #reload>
+  <div id="reload-container">
+    <button (click)="reloadData()" mat-stroked-button>Reload</button>
   </div>
 </ng-template>
