@@ -1,0 +1,6 @@
+#main-container {
+  align-items: center;
+  display: grid;
+  grid-template-rows: 10em auto;
+  height: 100%;
+}
