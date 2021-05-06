@@ -18,7 +18,6 @@ import {
 } from '../dtos';
 
 const RELEASES_PATH: string = 'releases';
-const STREAMING_LINKS_PATH: string = 'streaming-links';
 
 @Injectable()
 export class ReleasesService {
@@ -38,19 +37,6 @@ export class ReleasesService {
     );
   }
 
-  async getStreamingLinksOfRelease(
-    release: ReleaseModel
-  ): Promise<StreamingLinkModel[]> {
-    const url: string = `${this.baseUrl}/${release.id}/${STREAMING_LINKS_PATH}`;
-    const streamingLinks: StreamingLinkDTO[] = await this.httpClient
-      .get<StreamingLinkDTO[]>(url)
-      .toPromise();
-    return streamingLinks.map(
-      (dto: StreamingLinkDTO): StreamingLinkModel =>
-        this.mapStreamingLinkToModel(dto)
-    );
-  }
-
   private async getArtistsOfRelease(
     release: ReleaseDTO
   ): Promise<ArtistModel[]> {
@@ -59,6 +45,19 @@ export class ReleasesService {
       .get<ArtistDTO[]>(url)
       .toPromise();
     return artists.map((dto: ArtistDTO): ArtistModel => new ArtistModel(dto));
+  }
+
+  private async getStreamingLinksOfRelease(
+    release: ReleaseDTO
+  ): Promise<StreamingLinkModel[]> {
+    const url: string = `${environment.apiUrl}/${release.streamingLinks.ref}`;
+    const streamingLinks: StreamingLinkDTO[] = await this.httpClient
+      .get<StreamingLinkDTO[]>(url)
+      .toPromise();
+    return streamingLinks.map(
+      (dto: StreamingLinkDTO): StreamingLinkModel =>
+        this.mapStreamingLinkToModel(dto)
+    );
   }
 
   private async getTypeOfRelease(
@@ -76,6 +75,11 @@ export class ReleasesService {
     this.getArtistsOfRelease(release).then((artists: ArtistModel[]): void => {
       model.artists = artists;
     });
+    this.getStreamingLinksOfRelease(release).then(
+      (streamingLinks: StreamingLinkModel[]): void => {
+        model.streamingLinks = streamingLinks;
+      }
+    );
     this.getTypeOfRelease(release).then((type: ReleaseTypeModel): void => {
       model.type = type;
     });

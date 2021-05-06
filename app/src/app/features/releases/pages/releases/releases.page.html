@@ -13,6 +13,8 @@
 </ng-template>
 <ng-template #reload>
   <div id="reload-container">
-    <button (click)="reloadData()" mat-stroked-button>Reload</button>
+    <button (click)="reloadData()" mat-stroked-button>
+      {{ reloadButtonText }}
+    </button>
   </div>
 </ng-template>

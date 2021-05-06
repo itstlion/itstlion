@@ -15,12 +15,19 @@ Visit [_Keep a Changelog_][changelog] for more information.
 
 ## List of releases
 
+- [Version 1.1.1](#v1.1.1) - 2021/05/06
 - [Version 1.1.0](#v1.1.0) - 2021/05/05
 - [Version 1.0.3](#v1.0.3) - 2021/05/04
 - [Version 1.0.2](#v1.0.2) - 2021/05/03
 - [Version 1.0.1](#v1.0.1) - 2021/05/03
 - [Version 1.0.0](#v1.0.0) - 2021/05/03
 - [Version 0.1.0](#v0.1.0) - 2021/01/13
+
+## Version 1.1.1 <a name="v1.1.1"></a>
+
+### Fixed
+
+- Fix streaming links delayed display by fetching data on page loading
 
 ## Version 1.1.0 <a name="v1.1.0"></a>
 
