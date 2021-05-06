@@ -1,6 +1,7 @@
 import { ReleaseDTO } from '@app/core/dtos';
 import { ArtistModel } from './artist.model';
 import { ReleaseTypeModel } from './release-type.model';
+import { StreamingLinkModel } from './streaming-link.model';
 
 const ARTWORK_BASE_PATH: string = 'assets/images/releases';
 const ARTWORK_FORMAT: string = '.jpg';
@@ -10,6 +11,7 @@ export class ReleaseModel {
   id: number;
   name: string;
   releaseDate: string;
+  streamingLinks?: StreamingLinkModel[];
   type?: ReleaseTypeModel;
 
   constructor(dto: ReleaseDTO) {

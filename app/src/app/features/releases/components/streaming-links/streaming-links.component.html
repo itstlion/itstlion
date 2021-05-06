@@ -1,23 +1,12 @@
 <div id="container">
-  <div id="title-container">
-    <span id="title">{{ data.release.name }}</span>
-    <span id="subtitle">Choose a platform</span>
+  <div>
+    <span id="title">{{ release.name }}</span>
+    <span id="subtitle">{{ subtitle }}</span>
   </div>
   <mat-nav-list>
-    <a
-      (click)="openStreamingLink(streamingLink)"
-      mat-list-item
-      *ngFor="let streamingLink of data.streamingLinks"
-    >
-      <div class="streaming-platform" mat-line>
-        <span>{{ streamingLink.platform }}</span>
-        <div id="streaming-platform-logo">
-          <img
-            [ngClass]="streamingLink.getPlatformInLowerCase()"
-            src="{{ streamingLink.getLogo() }}"
-          />
-        </div>
-      </div>
-    </a>
+    <app-streaming-link
+      [link]="streamingLink"
+      *ngFor="let streamingLink of release.streamingLinks"
+    ></app-streaming-link>
   </mat-nav-list>
 </div>
