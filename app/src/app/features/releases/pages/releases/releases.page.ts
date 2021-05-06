@@ -11,6 +11,7 @@ import { ReleaseModel } from '@app/shared/models';
 export class ReleasesPage implements OnInit {
   isLoadingData: boolean;
   releases$: Promise<ReleaseModel[]>;
+  reloadButtonText: string;
 
   constructor(
     private notificationService: NotificationService,
@@ -19,6 +20,7 @@ export class ReleasesPage implements OnInit {
 
   ngOnInit(): void {
     this.getReleases();
+    this.initReloadButtonText();
   }
 
   reloadData(): void {
@@ -35,5 +37,9 @@ export class ReleasesPage implements OnInit {
     this.isLoadingData = true;
     this.releases$ = this.releasesService.getReleases();
     this.releases$.catch((): void => this.catchReleasesRetrieving());
+  }
+
+  private initReloadButtonText(): void {
+    this.reloadButtonText = 'Reload';
   }
 }
