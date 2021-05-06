@@ -1,8 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
 
-import { StreamingLinkModel } from '@app/shared/models';
-import { StreamingLinksDataModel } from '../../models';
+import { ReleaseModel, StreamingLinkModel } from '@app/shared/models';
 
 export const STREAMING_LINKS_PANEL_CLASS: string = 'dark-bottom-sheet';
 
@@ -12,9 +11,7 @@ export const STREAMING_LINKS_PANEL_CLASS: string = 'dark-bottom-sheet';
   templateUrl: './streaming-links.component.html'
 })
 export class StreamingLinksComponent {
-  constructor(
-    @Inject(MAT_BOTTOM_SHEET_DATA) public data: StreamingLinksDataModel
-  ) {}
+  constructor(@Inject(MAT_BOTTOM_SHEET_DATA) public release: ReleaseModel) {}
 
   openStreamingLink(streamingLink: StreamingLinkModel): void {
     window.open(streamingLink.link);
