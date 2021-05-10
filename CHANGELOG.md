@@ -15,6 +15,7 @@ Visit [_Keep a Changelog_][changelog] for more information.
 
 ## List of releases
 
+- [Version 1.1.3](#v1.1.3) - 2021/05/10
 - [Version 1.1.2](#v1.1.2) - 2021/05/07
 - [Version 1.1.1](#v1.1.1) - 2021/05/06
 - [Version 1.1.0](#v1.1.0) - 2021/05/05
@@ -23,6 +24,16 @@ Visit [_Keep a Changelog_][changelog] for more information.
 - [Version 1.0.1](#v1.0.1) - 2021/05/03
 - [Version 1.0.0](#v1.0.0) - 2021/05/03
 - [Version 0.1.0](#v0.1.0) - 2021/01/13
+
+## Version 1.1.3 <a name="v1.1.3"></a>
+
+### Changed
+
+- Update README documentation for public access
+
+### Fixed
+
+- Fix API url in production environment
 
 ## Version 1.1.2 <a name="v1.1.2"></a>
 
