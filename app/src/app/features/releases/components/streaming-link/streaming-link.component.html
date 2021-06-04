@@ -1,11 +1,13 @@
 <a (click)="openStreamingLink()" mat-list-item>
   <div class="streaming-platform" mat-line>
     <span>{{ streamingLink.platform }}</span>
-    <div id="streaming-platform-logo">
-      <img
-        [ngClass]="streamingLink.getPlatformInLowerCase()"
-        src="{{ streamingLink.getLogo() }}"
-      />
+    <div id="logo-container">
+      <div>
+        <img
+          [ngClass]="streamingLink.getPlatformInLowerCase()"
+          src="{{ streamingLink.getLogo() }}"
+        />
+      </div>
     </div>
   </div>
 </a>
