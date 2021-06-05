@@ -1,3 +1,21 @@
+#logo-container {
+  justify-content: flex-end;
+}
+
+#logo-container,
+#logo-container > div {
+  display: flex;
+}
+
+#logo-container > div {
+  justify-content: center;
+}
+
+#logo-container > div,
+#logo-container > div > img {
+  width: 3em;
+}
+
 .spotify,
 .youtube-music {
   width: 2em !important;
@@ -7,14 +25,6 @@
   align-items: center;
   color: var(--color-white);
   display: grid !important;
-  grid-template-columns: 80% 20%;
-}
-
-#streaming-platform-logo {
-  display: flex;
-  justify-content: center;
-}
-
-#streaming-platform-logo > img {
-  width: 3em;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: repeat(auto-fit, minmax(3em, 1fr));
 }
