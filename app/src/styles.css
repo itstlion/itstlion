@@ -16,6 +16,7 @@ html {
 .dark-bottom-sheet {
   background-color: var(--color-grey-800);
   color: var(--color-white);
+  min-width: 26em !important;
 }
 
 .mat-spinner circle {

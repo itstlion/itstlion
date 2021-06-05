@@ -15,6 +15,7 @@ Visit [_Keep a Changelog_][changelog] for more information.
 
 ## List of releases
 
+- [Version 1.2.3](#v1.2.3) - 2021/06/05
 - [Version 1.2.2](#v1.2.2) - 2021/05/18
 - [Version 1.2.1](#v1.2.1) - 2021/05/13
 - [Version 1.2.0](#v1.2.0) - 2021/05/13
@@ -27,6 +28,12 @@ Visit [_Keep a Changelog_][changelog] for more information.
 - [Version 1.0.1](#v1.0.1) - 2021/05/03
 - [Version 1.0.0](#v1.0.0) - 2021/05/03
 - [Version 0.1.0](#v0.1.0) - 2021/01/13
+
+## Version 1.2.3 <a name="v1.2.3"></a>
+
+### Fixed
+
+- Try to fix bad display on Apple devices by updating streaming links UI
 
 ## Version 1.2.2 <a name="v1.2.2"></a>
 
