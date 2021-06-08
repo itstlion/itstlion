@@ -4,11 +4,11 @@
 
 ## Description
 
-[**It's T.Lion**][itstlion] is the frontend application of the website of [**T.Lion**][tlion-instagram].
+_[It's T.Lion][itstlion]_ is the official website of _[T.Lion][tlion-instagram]_.
 
 ### Linked projects
 
-This project is coupled with [**It's T.Lion API**][itstlion-api-repository], which is the backend server's repository.
+This project is coupled with _[It's T.Lion API][itstlion-api-repository]_, which is the backend server's repository.
 
 ## Installation
 
@@ -16,8 +16,8 @@ This project is coupled with [**It's T.Lion API**][itstlion-api-repository], whi
 
 Before installing this repository on your computer, you should have the following requirements to get started:
 
-- [Node.js 14][nodejs]
-- [NPM 6][npm].
+- [Node.js][nodejs] version 14 or above
+- [NPM] version 6 or above.
 
 ### Clone
 
@@ -31,7 +31,7 @@ It will create a folder called `itstlion` and clone the repository in it.
 
 ### Installing dependencies
 
-Now that you have cloned the repository, you have to install the necessary dependencies before running the application. For doing so, you can run the following commands in your terminal:
+Now that you have cloned the repository, you can install the necessary dependencies before running the application. For doing so, run the following commands in your terminal:
 
 ```shell
 cd ./itstlion/app # Move to the application folder
@@ -40,7 +40,7 @@ npm clean-install # Install necessary dependencies with NPM
 
 ### Run
 
-Once you have installed the dependencies, you are now able to run the application on your computer. For doing so, you can run the following command in your terminal in the `app` folder:
+Now that you have installed the dependencies, you are able to run the application on your device. For doing so, you can run the following command in your terminal:
 
 ```shell
 npm start
@@ -50,17 +50,17 @@ Now, you should be able to visit the website on [`http://localhost:4200`][localh
 
 ## Contributing
 
-This repository is currently not open for external contributions. Only its maintainer is authorized to update the source code.
+This repository is currently not open for external contributions: its source code can only be updated by its maintainer.
 
-In order to contribute to the developer community, [**It's T.Lion**][itstlion] is public for giving examples on how to develop a website using [_Angular_][angular] framework.
+In order to contribute to the developer community, _[It's T.Lion][itstlion]_ is public for giving examples on how to develop a website using _[Angular]_ framework.
 
 ## Versioning
 
-This repository use _Git_ as the main versioning tool and follows [_Semantic Versioning_][sem-ver] principles.
+This repository use _Git_ as the main versioning tool and follows _[Semantic Versioning][sem-ver]_ principles.
 
 ## Authors and acknowledgement
 
-Repository created and maintained by [LAMARQUE Loïc][lvmvrquxl].
+Repository created and maintained by [Lamarque Loïc][lvmvrquxl].
 
 [angular]: https://angular.io
 [badge-latest-release]: https://img.shields.io/github/v/release/itstlion/itstlion?label=Latest%20release&style=for-the-badge
