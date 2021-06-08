@@ -13,8 +13,9 @@ export class StreamingLinksService {
     streamingLink: StreamingLinkDTO
   ): Promise<StreamingPlatformModel> {
     const url: string = `${environment.apiUrl}/${streamingLink.platform.ref}`;
-    return StreamingPlatformModel[
-      await this.httpClient.get<StreamingPlatformDTO>(url).toPromise()
-    ];
+    const platform: StreamingPlatformDTO = await this.httpClient
+      .get<StreamingPlatformDTO>(url)
+      .toPromise();
+    return StreamingPlatformModel[platform];
   }
 }
