@@ -11,7 +11,7 @@ All notable changes to this project will be documented in this file.
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities.
 
-Visit [_Keep a Changelog_][changelog] for more information.
+Visit _[Keep a Changelog][changelog]_ for more information.
 
 ## List of releases
 
