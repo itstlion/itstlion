@@ -11,10 +11,11 @@ All notable changes to this project will be documented in this file.
 - `Fixed` for any bug fixes.
 - `Security` in case of vulnerabilities.
 
-Visit [_Keep a Changelog_][changelog] for more information.
+Visit _[Keep a Changelog][changelog]_ for more information.
 
 ## List of releases
 
+- [Version 1.3.0](#v1.3.0) - NEXT
 - [Version 1.2.3](#v1.2.3) - 2021/06/05
 - [Version 1.2.2](#v1.2.2) - 2021/05/18
 - [Version 1.2.1](#v1.2.1) - 2021/05/13
@@ -28,6 +29,13 @@ Visit [_Keep a Changelog_][changelog] for more information.
 - [Version 1.0.1](#v1.0.1) - 2021/05/03
 - [Version 1.0.0](#v1.0.0) - 2021/05/03
 - [Version 0.1.0](#v0.1.0) - 2021/01/13
+
+## Version 1.3.0 - NEXT <a name="v1.3.0"></a>
+
+### Changed
+
+- Simplify `README` documentation
+- Migrate from API v2 to v3
 
 ## Version 1.2.3 <a name="v1.2.3"></a>
 

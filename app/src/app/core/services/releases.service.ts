@@ -21,18 +21,14 @@ const RELEASES_PATH: string = 'releases';
 
 @Injectable()
 export class ReleasesService {
-  private baseUrl: string = `${environment.apiUrl}/${RELEASES_PATH}`;
-
   constructor(
     private httpClient: HttpClient,
     private streamingLinksService: StreamingLinksService
   ) {}
 
   async getReleases(): Promise<ReleaseModel[]> {
-    const releases: ReleaseDTO[] = await this.httpClient
-      .get<ReleaseDTO[]>(this.baseUrl)
-      .toPromise();
-    return releases.map(
+    const url: string = `${environment.apiUrl}/${RELEASES_PATH}`;
+    return (await this.httpClient.get<ReleaseDTO[]>(url).toPromise()).map(
       (dto: ReleaseDTO): ReleaseModel => this.mapReleaseToModel(dto)
     );
   }
@@ -41,20 +37,16 @@ export class ReleasesService {
     release: ReleaseDTO
   ): Promise<ArtistModel[]> {
     const url: string = `${environment.apiUrl}/${release.artists.ref}`;
-    const artists: ArtistDTO[] = await this.httpClient
-      .get<ArtistDTO[]>(url)
-      .toPromise();
-    return artists.map((dto: ArtistDTO): ArtistModel => new ArtistModel(dto));
+    return (await this.httpClient.get<ArtistDTO[]>(url).toPromise()).map(
+      (dto: ArtistDTO): ArtistModel => new ArtistModel(dto)
+    );
   }
 
   private async getStreamingLinksOfRelease(
     release: ReleaseDTO
   ): Promise<StreamingLinkModel[]> {
     const url: string = `${environment.apiUrl}/${release.streamingLinks.ref}`;
-    const streamingLinks: StreamingLinkDTO[] = await this.httpClient
-      .get<StreamingLinkDTO[]>(url)
-      .toPromise();
-    return streamingLinks.map(
+    return (await this.httpClient.get<StreamingLinkDTO[]>(url).toPromise()).map(
       (dto: StreamingLinkDTO): StreamingLinkModel =>
         this.mapStreamingLinkToModel(dto)
     );
@@ -64,10 +56,9 @@ export class ReleasesService {
     release: ReleaseDTO
   ): Promise<ReleaseTypeModel> {
     const url: string = `${environment.apiUrl}/${release.type.ref}`;
-    const type: ReleaseTypeDTO = await this.httpClient
-      .get<ReleaseTypeDTO>(url)
-      .toPromise();
-    return ReleaseTypeModel[type];
+    return ReleaseTypeModel[
+      await this.httpClient.get<ReleaseTypeDTO>(url).toPromise()
+    ];
   }
 
   private mapReleaseToModel(release: ReleaseDTO): ReleaseModel {
