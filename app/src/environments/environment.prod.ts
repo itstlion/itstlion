@@ -1,4 +1,4 @@
 export const environment = {
-  apiUrl: 'https://api.itstlion.com/v2',
+  apiUrl: 'https://api.itstlion.com/v3',
   production: true
 };

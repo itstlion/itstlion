@@ -35,6 +35,7 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 ### Changed
 
 - Simplify `README` documentation
+- Migrate from API v2 to v3
 
 ## Version 1.2.3 <a name="v1.2.3"></a>
 
