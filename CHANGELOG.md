@@ -15,6 +15,7 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 
 ## List of releases
 
+- [Version 1.5.0](#v1.5.0) - NEXT
 - [Version 1.4.0](#v1.4.0) - 2021/06/25
 - [Version 1.3.1](#v1.3.1) - 2021/06/08
 - [Version 1.3.0](#v1.3.0) - 2021/06/08
@@ -31,6 +32,8 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 - [Version 1.0.1](#v1.0.1) - 2021/05/03
 - [Version 1.0.0](#v1.0.0) - 2021/05/03
 - [Version 0.1.0](#v0.1.0) - 2021/01/13
+
+## Version 1.5.0 - NEXT <a name="v1.5.0"></a>
 
 ## Version 1.4.0 <a name="v1.4.0"></a>
 
