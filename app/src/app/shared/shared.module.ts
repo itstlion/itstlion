@@ -8,11 +8,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { HeaderComponent } from './components';
+import { FooterComponent, HeaderComponent } from './components';
 
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [FooterComponent, HeaderComponent],
   exports: [
+    FooterComponent,
     HeaderComponent,
     MatBottomSheetModule,
     MatButtonModule,
