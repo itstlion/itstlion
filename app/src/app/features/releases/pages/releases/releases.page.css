@@ -9,10 +9,9 @@
 }
 
 #reload-container > button {
-  border-color: var(--color-grey-700);
-  color: var(--color-grey-700);
-  font-size: 2em;
-  height: 2em;
+  border-color: var(--color-soft-blue-light);
+  color: var(--color-soft-blue-light);
+  font-size: 1.125em;
 }
 
 #reload-container,

@@ -40,6 +40,6 @@ export class ReleasesPage implements OnInit {
   }
 
   private initReloadButtonText(): void {
-    this.reloadButtonText = 'Reload';
+    this.reloadButtonText = 'RELOAD';
   }
 }
