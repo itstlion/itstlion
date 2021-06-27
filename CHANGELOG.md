@@ -42,6 +42,11 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 ### Changed
 
 - UI of loader and reload button
+- Modernize releases UI
+
+### Fixed
+
+- Bottom sheet's bad display on small mobiles
 
 ## Version 1.4.0 <a name="v1.4.0"></a>
 
