@@ -1,0 +1,10 @@
+#container {
+  align-content: center;
+  display: grid;
+  height: 5em;
+  justify-content: center;
+}
+
+#container > span {
+  color: var(--color-grey-700);
+}
