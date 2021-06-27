@@ -9,7 +9,7 @@
 }
 
 #subtitle {
-  color: var(--color-soft-blue);
+  color: var(--subtitle-color);
   padding-top: 0.25em;
 }
 

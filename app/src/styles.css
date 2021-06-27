@@ -1,7 +1,25 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+* {
+  /* COLOR PALETTE */
+  --background-color: hsl(0, 0%, 7%);
+  --error-color: hsl(349, 52%, 61%);
+  --primary-color: #ffcc7a;
+  --secondary-color: #7badfe;
+  --surface-color: hsl(0, 0%, 14%);
+
+  /* TEXT COLOR PALETTE */
+  --on-background-color: hsl(0, 0%, 93%);
+  --on-error-color: hsl(0, 0%, 7%);
+  --on-primary-color: hsl(0, 0%, 7%);
+  --on-secondary-color: hsl(0, 0%, 7%);
+  --on-surface-color: hsl(0, 0%, 93%);
+  --subtitle-color: hsl(0, 0%, 73%);
+  --title-2-color: hsl(0, 0%, 83%);
+}
+
 body {
-  background-color: var(--color-dark-grey);
+  background-color: var(--background-color);
   border: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   margin: 0;
@@ -14,28 +32,14 @@ html {
 }
 
 .dark-bottom-sheet {
-  background-color: var(--color-grey-800);
-  color: var(--color-white);
+  background-color: var(--surface-color);
+  color: var(--on-surface-color);
   min-width: 23em !important;
 }
 
 .mat-spinner circle {
-  stroke: var(--color-soft-blue-light);
+  stroke: var(--on-background-color);
   stroke-width: 3% !important;
-}
-
-:root {
-  --color-black: #000000;
-  --color-dark-blue: #2f3542;
-  --color-dark-grey: #121212;
-  --color-grey-700: #515151;
-  --color-grey-800: #333333;
-  --color-soft-blue: #a4b0be;
-  --color-soft-blue-light: #dfe4ea;
-  --color-soft-orange: #ffb640;
-  --color-soft-red: #cf6679;
-  --color-transparent: #00000000;
-  --color-white: #f1f2f6;
 }
 
 simple-snack-bar span {
@@ -44,11 +48,11 @@ simple-snack-bar span {
 }
 
 snack-bar-container.error-notification {
-  background-color: var(--color-soft-red);
-  color: var(--color-black);
+  background-color: var(--error-color);
+  color: var(--on-error-color);
 }
 
 snack-bar-container.notification {
-  background-color: var(--color-grey-800);
-  color: var(--color-white);
+  background-color: hsl(0, 0%, 16%);
+  color: var(--on-surface-color);
 }
