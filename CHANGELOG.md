@@ -35,6 +35,14 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 
 ## Version 1.5.0 - NEXT <a name="v1.5.0"></a>
 
+### Added
+
+- Footer with version number of the application
+
+### Changed
+
+- UI of loader and reload button
+
 ## Version 1.4.0 <a name="v1.4.0"></a>
 
 ### Added
