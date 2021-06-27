@@ -7,4 +7,5 @@
 
 #container > span {
   color: var(--color-grey-700);
+  font-size: 0.875em;
 }
