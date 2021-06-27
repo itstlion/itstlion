@@ -43,6 +43,7 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 
 - UI of loader and reload button
 - Modernize releases UI
+- Dark theme following _[Material Design principles][material-dark-theme]_
 
 ### Fixed
 
@@ -157,4 +158,7 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 - Pull request and issue templates for _Github_ repository
 - Continuous Delivery (CD) scripts for staging and production environments with _Github Actions_
 
+<!-- Links -->
+
 [changelog]: https://keepachangelog.com/en/1.1.0/
+[material-dark-theme]: https://material.io/design/color/dark-theme.html
