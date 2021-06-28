@@ -4,11 +4,12 @@
   /* COLOR PALETTE */
   --background-color: hsl(0, 0%, 7%);
   --error-color: hsl(349, 52%, 61%);
-  --primary-color: #ffcc7a;
-  --secondary-color: #7badfe;
+  --primary-color: hsl(37, 100%, 74%);
+  --secondary-color: hsl(217, 98%, 74%);
   --surface-color: hsl(0, 0%, 14%);
 
   /* TEXT COLOR PALETTE */
+  --footer-color: hsl(0, 0%, 33%);
   --on-background-color: hsl(0, 0%, 93%);
   --on-error-color: hsl(0, 0%, 7%);
   --on-primary-color: hsl(0, 0%, 7%);
