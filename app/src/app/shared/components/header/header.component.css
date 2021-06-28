@@ -5,8 +5,8 @@ img {
 }
 
 mat-toolbar {
-  background-color: var(--color-dark-grey);
-  color: var(--color-white);
+  background-color: transparent;
+  color: var(--on-background-color);
   height: 8em;
   justify-content: center;
 }

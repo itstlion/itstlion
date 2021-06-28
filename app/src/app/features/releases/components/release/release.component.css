@@ -1,6 +1,6 @@
 mat-card {
-  background-color: var(--color-grey-800);
-  color: var(--color-white);
+  background-color: var(--surface-color);
+  color: var(--on-surface-color);
   cursor: pointer;
 }
 
@@ -18,10 +18,10 @@ mat-card-title {
 }
 
 .release-artists {
-  color: var(--color-soft-blue-light);
+  color: var(--title-2-color);
 }
 
 .release-type {
-  color: var(--color-soft-blue);
+  color: var(--subtitle-color);
   text-align: end;
 }

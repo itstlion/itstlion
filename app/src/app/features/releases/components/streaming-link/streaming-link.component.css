@@ -23,7 +23,7 @@
 
 .streaming-platform {
   align-items: center;
-  color: var(--color-white);
+  color: var(--on-surface-color);
   display: grid !important;
   grid-template-columns: 70% 30%;
   grid-template-rows: repeat(auto-fit, minmax(3em, 1fr));
