@@ -1,0 +1,10 @@
+#container {
+  display: grid;
+  height: 3em;
+  place-items: center;
+}
+
+#container > span {
+  color: var(--color-grey-700);
+  font-size: 0.875em;
+}

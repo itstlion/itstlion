@@ -20,8 +20,8 @@ html {
 }
 
 .mat-spinner circle {
-  stroke: var(--color-grey-700);
-  stroke-width: 7% !important;
+  stroke: var(--color-soft-blue-light);
+  stroke-width: 3% !important;
 }
 
 :root {
