@@ -1,22 +1,56 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 * {
-  /* COLOR PALETTE */
-  --background-color: hsl(0, 0%, 7%);
+  /* COLOR PROPERTIES */
+  --empty-hue: 0;
+  --empty-saturation: 0%;
+  --dark-lightness: 7%;
+  --bright-lightness: calc(100% - var(--dark-lightness));
+
+  /* SHARED COLORS */
+  --dark-grey: hsl(
+    var(--empty-hue),
+    var(--empty-saturation),
+    var(--dark-lightness)
+  );
+  --white: hsl(
+    var(--empty-hue),
+    var(--empty-saturation),
+    var(--bright-lightness)
+  );
+
+  /* COLOR THEME */
+  --background-color: var(--dark-grey);
   --error-color: hsl(349, 52%, 61%);
   --primary-color: hsl(37, 100%, 74%);
   --secondary-color: hsl(217, 98%, 74%);
-  --surface-color: hsl(0, 0%, 14%);
+  --surface-color: hsl(
+    var(--empty-hue),
+    var(--empty-saturation),
+    calc(var(--dark-lightness) * 2)
+  );
 
-  /* TEXT COLOR PALETTE */
-  --footer-color: hsl(0, 0%, 33%);
-  --on-background-color: hsl(0, 0%, 93%);
-  --on-error-color: hsl(0, 0%, 7%);
-  --on-primary-color: hsl(0, 0%, 7%);
-  --on-secondary-color: hsl(0, 0%, 7%);
-  --on-surface-color: hsl(0, 0%, 93%);
-  --subtitle-color: hsl(0, 0%, 73%);
-  --title-2-color: hsl(0, 0%, 83%);
+  /* TEXT COLOR THEME */
+  --footer-color: hsl(
+    var(--empty-hue),
+    var(--empty-saturation),
+    calc(var(--dark-lightness) * 6)
+  );
+  --on-background-color: var(--white);
+  --on-error-color: var(--dark-grey);
+  --on-primary-color: var(--dark-grey);
+  --on-secondary-color: var(--dark-grey);
+  --on-surface-color: var(--white);
+  --subtitle-color: hsl(
+    var(--empty-hue),
+    var(--empty-saturation),
+    calc(var(--bright-lightness) - 20%)
+  );
+  --title-2-color: hsl(
+    var(--empty-hue),
+    var(--empty-saturation),
+    calc(var(--bright-lightness) - 10%)
+  );
 }
 
 body {
@@ -54,6 +88,10 @@ snack-bar-container.error-notification {
 }
 
 snack-bar-container.notification {
-  background-color: hsl(0, 0%, 16%);
+  background-color: hsl(
+    var(--empty-hue),
+    var(--empty-saturation),
+    calc(var(--dark-lightness) * 3)
+  );
   color: var(--on-surface-color);
 }

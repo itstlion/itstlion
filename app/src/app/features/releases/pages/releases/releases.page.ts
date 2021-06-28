@@ -19,8 +19,8 @@ export class ReleasesPage implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getReleases();
     this.initReloadButtonText();
+    this.getReleases();
   }
 
   reloadData(): void {
