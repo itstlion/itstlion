@@ -1,8 +1,7 @@
 #container {
-  align-content: center;
   display: grid;
-  height: 5em;
-  justify-content: center;
+  height: 3em;
+  place-items: center;
 }
 
 #container > span {
