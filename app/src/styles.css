@@ -34,7 +34,7 @@
   --footer-color: hsl(
     var(--empty-hue),
     var(--empty-saturation),
-    calc(var(--dark-lightness) * 6)
+    calc(var(--dark-lightness) * 7)
   );
   --on-background-color: var(--white);
   --on-error-color: var(--dark-grey);
