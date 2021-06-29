@@ -29,6 +29,11 @@
     var(--empty-saturation),
     calc(var(--dark-lightness) * 2)
   );
+  --surface-2-color: hsl(
+    var(--empty-hue),
+    var(--empty-saturation),
+    calc(var(--dark-lightness) * 3)
+  );
 
   /* TEXT COLOR THEME */
   --footer-color: hsl(
@@ -72,6 +77,11 @@ html {
   min-width: 23em !important;
 }
 
+.mat-divider {
+  margin: 0.125em 1em !important;
+  border-top-color: var(--surface-2-color);
+}
+
 .mat-spinner circle {
   stroke: var(--on-background-color);
   stroke-width: 3% !important;
@@ -88,10 +98,6 @@ snack-bar-container.error-notification {
 }
 
 snack-bar-container.notification {
-  background-color: hsl(
-    var(--empty-hue),
-    var(--empty-saturation),
-    calc(var(--dark-lightness) * 3)
-  );
+  background-color: var(--surface-2-color);
   color: var(--on-surface-color);
 }

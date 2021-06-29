@@ -4,9 +4,9 @@
     <span id="subtitle">{{ subtitle }}</span>
   </div>
   <mat-nav-list>
-    <app-streaming-link
-      [link]="streamingLink"
-      *ngFor="let streamingLink of release.streamingLinks"
-    ></app-streaming-link>
+    <div *ngFor="let streamingLink of release.streamingLinks">
+      <app-streaming-link [link]="streamingLink"></app-streaming-link>
+      <mat-divider *ngIf="isNotLastItem(streamingLink)"></mat-divider>
+    </div>
   </mat-nav-list>
 </div>

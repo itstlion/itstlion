@@ -2,15 +2,10 @@ mat-card {
   background-color: var(--surface-color);
   color: var(--on-surface-color);
   cursor: pointer;
-  transition: all 0.5s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 mat-card:hover {
-  --surface-2-color: hsl(
-    var(--empty-hue),
-    var(--empty-saturation),
-    calc(var(--dark-lightness) * 3)
-  );
   box-shadow: 0 0 1em var(--surface-2-color);
   background-color: var(--surface-2-color);
 }
