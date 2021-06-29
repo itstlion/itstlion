@@ -37,7 +37,8 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 
 ### Added
 
-- Footer with version number of the application
+- Footer with version number of the application (secret)
+- Transitions for improving User Experience (UX)
 
 ### Changed
 
