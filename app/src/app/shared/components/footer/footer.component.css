@@ -1,10 +1,12 @@
-#container {
+span {
+  color: transparent;
   display: flex;
   height: 3em;
   place-items: center;
+  transition: color 0.3s ease-out;
+  user-select: none;
 }
 
-#container > span {
+span:hover {
   color: var(--footer-color);
-  font-size: 0.875em;
 }
