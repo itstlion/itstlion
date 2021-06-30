@@ -11,8 +11,8 @@
 }
 
 #reload-container > button {
-  border-color: var(--color-soft-blue-light);
-  color: var(--color-soft-blue-light);
+  border-color: var(--white);
+  color: var(--white);
   font-size: 1.125em;
 }
 

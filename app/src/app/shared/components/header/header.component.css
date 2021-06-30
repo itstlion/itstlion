@@ -7,12 +7,7 @@ img {
 mat-toolbar {
   background-color: transparent;
   color: var(--on-background-color);
+  flex-direction: column;
   height: 8em;
-  justify-content: center;
-}
-
-mat-toolbar > div {
-  display: grid;
-  row-gap: 0.5em;
-  text-align: center;
+  place-content: center;
 }
