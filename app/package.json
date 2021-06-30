@@ -1,6 +1,6 @@
 {
   "name": "itstlion",
-  "version": "1.4.0",
+  "version": "1.5.0-SNAPSHOT",
   "scripts": {
     "build": "ng build",
     "build:prod": "ng build --prod",
@@ -11,7 +11,8 @@
     "docker:clean:image": "docker image prune -f",
     "docker:clean:volume": "docker volume prune -f",
     "docker:start": "docker run -d -e PORT=4200 -p 8765:4200 --name itstlion itstlion",
-    "start": "ng serve"
+    "start": "ng serve",
+    "start:prod": "ng serve --prod"
   },
   "private": true,
   "dependencies": {

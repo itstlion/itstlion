@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
 
-import { ReleaseModel } from '@app/shared/models';
+import { ReleaseModel, StreamingLinkModel } from '@app/shared/models';
 
 export const STREAMING_LINKS_PANEL_CLASS: string = 'dark-bottom-sheet';
 
@@ -17,5 +17,12 @@ export class StreamingLinksComponent implements OnInit {
 
   ngOnInit(): void {
     this.subtitle = 'Choose a platform';
+  }
+
+  isNotLastItem(streamingLink: StreamingLinkModel): boolean {
+    return (
+      this.release.streamingLinks[this.release.streamingLinks.length - 1] !==
+      streamingLink
+    );
   }
 }

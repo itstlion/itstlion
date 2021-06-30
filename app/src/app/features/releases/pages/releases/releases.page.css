@@ -1,56 +1,23 @@
 .release-container {
-  padding: 0 3em;
+  flex: 0 1 16em;
+  margin: 1em;
 }
 
 #releases-container {
-  display: grid;
-  padding: 2em 0;
-  row-gap: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1em;
 }
 
 #reload-container > button {
-  border-color: var(--color-grey-700);
-  color: var(--color-grey-700);
-  font-size: 2em;
-  height: 2em;
+  border-color: var(--white);
+  color: var(--white);
+  font-size: 1.125em;
 }
 
 #reload-container,
 #spinner-container {
   display: flex;
   justify-content: center;
-}
-
-/* TABLET */
-@media only screen and (min-width: 426px) {
-  .release-container {
-    padding: 0;
-  }
-
-  #releases-container {
-    column-gap: 3em;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 2em 3em;
-  }
-}
-
-/* LAPTOP */
-@media only screen and (min-width: 769px) {
-  #releases-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* LAPTOP L */
-@media only screen and (min-width: 1025px) {
-  #releases-container {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-
-/* WIDER LAPTOPS */
-@media only screen and (min-width: 1441px) {
-  .release-container {
-    padding: 0 2.25em;
-  }
 }
