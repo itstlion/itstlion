@@ -15,6 +15,7 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 
 ## List of releases
 
+- [Version 1.5.0](#v1.5.0) - 2021/07/05
 - [Version 1.4.0](#v1.4.0) - 2021/06/25
 - [Version 1.3.1](#v1.3.1) - 2021/06/08
 - [Version 1.3.0](#v1.3.0) - 2021/06/08
@@ -31,6 +32,23 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 - [Version 1.0.1](#v1.0.1) - 2021/05/03
 - [Version 1.0.0](#v1.0.0) - 2021/05/03
 - [Version 0.1.0](#v0.1.0) - 2021/01/13
+
+## Version 1.5.0 <a name="v1.5.0"></a>
+
+### Added
+
+- Footer with version number of the application (secret)
+- Transitions for improving User Experience (UX)
+
+### Changed
+
+- UI of loader and reload button
+- Modernize releases UI
+- Dark theme following _[Material Design principles][material-dark-theme]_
+
+### Fixed
+
+- Bottom sheet's bad display on small mobiles
 
 ## Version 1.4.0 <a name="v1.4.0"></a>
 
@@ -141,4 +159,7 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 - Pull request and issue templates for _Github_ repository
 - Continuous Delivery (CD) scripts for staging and production environments with _Github Actions_
 
+<!-- Links -->
+
 [changelog]: https://keepachangelog.com/en/1.1.0/
+[material-dark-theme]: https://material.io/design/color/dark-theme.html

@@ -19,8 +19,8 @@ export class ReleasesPage implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getReleases();
     this.initReloadButtonText();
+    this.getReleases();
   }
 
   reloadData(): void {
@@ -40,6 +40,6 @@ export class ReleasesPage implements OnInit {
   }
 
   private initReloadButtonText(): void {
-    this.reloadButtonText = 'Reload';
+    this.reloadButtonText = 'RELOAD';
   }
 }
