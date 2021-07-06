@@ -33,6 +33,8 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 - [Version 1.0.0](#v1.0.0) - 2021/05/03
 - [Version 0.1.0](#v0.1.0) - 2021/01/13
 
+## Next version
+
 ## Version 1.5.0 <a name="v1.5.0"></a>
 
 ### Added
