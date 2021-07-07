@@ -4,6 +4,9 @@ on:
     branches:
       - develop
       - master
+  push: # TODO: Remove after testing
+    branches:
+      - feature/90
 defaults:
   run:
     working-directory: ./app
