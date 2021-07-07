@@ -2,10 +2,14 @@ name: CD
 on:
   push:
     branches:
-      - 'master'
-
+      - master
+defaults:
+  run:
+    working-directory: ./app
 jobs:
-  build_and_deploy:
+  # ---------- Stage 1 ----------
+  deploy-prod-image:
+    name: Deploy Docker image in production
     runs-on: ubuntu-latest
     env:
       HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
@@ -14,62 +18,58 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Retrieve application's version
-        run: |
-          VERSION=`sed -nE 's/^\s*"version": "(.*?)",$/\1/p' ./app/package.json`
-          echo "APP_VERSION=$VERSION" >> $GITHUB_ENV
       - name: Build Docker image
-        run: docker build -t "itstlion:$APP_VERSION" .
-        working-directory: ./app
+        run: docker build -t $HEROKU_REGISTRY/$HEROKU_APP_NAME/$HEROKU_PROCESS_TYPE .
       - name: Login to Heroku Registry
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: docker login -u _ -p $HEROKU_API_KEY $HEROKU_REGISTRY
-        working-directory: ./app
-      - name: Prepare Docker image for Heroku Registry
-        run: docker tag "itstlion:$APP_VERSION" "$HEROKU_REGISTRY/$HEROKU_APP_NAME/$HEROKU_PROCESS_TYPE"
-        working-directory: ./app
+        run: echo ${{ secrets.HEROKU_API_KEY }} | docker login $HEROKU_REGISTRY -u _ --password-stdin
       - name: Push Docker image to Heroku Registry
-        run: docker push "$HEROKU_REGISTRY/$HEROKU_APP_NAME/$HEROKU_PROCESS_TYPE"
-        working-directory: ./app
+        run: docker push $HEROKU_REGISTRY/$HEROKU_APP_NAME/$HEROKU_PROCESS_TYPE
       - name: Logout from Heroku Registry
         run: docker logout $HEROKU_REGISTRY
-        working-directory: ./app
-  tag:
+  retrieve-version:
+    name: Retrieve application's version
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Set Git identity
-        env:
-          GIT_USER_EMAIL: ${{ secrets.GIT_USER_EMAIL }}
-          GIT_USER_NAME: ${{ secrets.GIT_USER_NAME }}
-        run: |
-          git config user.email "$GIT_USER_EMAIL"
-          git config user.name "$GIT_USER_NAME"
-      - name: Create tag
-        run: |
-          VERSION=`sed -nE 's/^\s*"version": "(.*?)",$/\1/p' ./app/package.json`
-          git tag -a "v$VERSION-rc" -m "Release candidate v$VERSION"
-      - name: Push tag to repository
-        run: git push --tags origin
-  draft-release:
-    needs:
-      - build_and_deploy
-      - tag
-    runs-on: ubuntu-latest
+    outputs:
+      app-version: ${{ steps.retrieve-version-step.outputs.version }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Retrieve application's version
+        id: retrieve-version-step
         run: |
-          VERSION=`sed -nE 's/^\s*"version": "(.*?)",$/\1/p' ./app/package.json`
-          echo "APP_VERSION=$VERSION" >> $GITHUB_ENV
-      - name: Create release
+          VERSION=`sed -nE 's/^\s*"version": "(.*?)",$/\1/p' package.json`
+          echo ::set-output name=version::$VERSION
+  # ---------- Stage 2 ----------
+  draft-release:
+    name: Create a draft for next release
+    runs-on: ubuntu-latest
+    needs: retrieve-version
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Create release's draft
         env:
+          APP_VERSION: ${{ needs.retrieve-version.outputs.app-version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         uses: actions/create-release@v1
         with:
-          tag_name: v${{ env.APP_VERSION }}
-          release_name: Release v${{ env.APP_VERSION }}
           draft: true
+          release_name: Release v${{ env.APP_VERSION }}
+          tag_name: v${{ env.APP_VERSION }}
+  tag:
+    name: Create tag for release candidate
+    runs-on: ubuntu-latest
+    needs: retrieve-version
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set Git user email
+        run: git config user.email ${{ secrets.GIT_USER_EMAIL }}
+      - name: Set Git user name
+        run: git config user.name ${{ secrets.GIT_USER_NAME }}
+      - name: Create tag
+        env:
+          APP_VERSION: ${{ needs.retrieve-version.outputs.app-version }}
+        run: git tag -a v$APP_VERSION-rc -m "Release candidate v$APP_VERSION"
+      - name: Push tag to repository
+        run: git push --tags origin
