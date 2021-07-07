@@ -4,6 +4,9 @@ on:
     branches:
       - develop
       - master
+defaults:
+  run:
+    working-directory: ./app
 jobs:
   build:
     name: Build application
@@ -12,6 +15,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install required dependencies
-        run: cd app && npm install
+        run: npm install
       - name: Build application
-        run: cd app && npm run build
+        run: npm run build
