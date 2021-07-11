@@ -35,6 +35,10 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 
 ## Next version
 
+### Added
+
+- Docker Compose configuration for development environment
+
 ## Version 1.5.0 <a name="v1.5.0"></a>
 
 ### Added
