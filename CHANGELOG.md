@@ -42,9 +42,6 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 ### Changed
 
 - Refactor CI & CD
-
-### Changed
-
 - Improved version number reaction in footer
 
 ## Version 1.5.0 <a name="v1.5.0"></a>
