@@ -15,6 +15,7 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 
 ## List of releases
 
+- [Version 1.6.0](#v1.6.0) - 2021/07/17
 - [Version 1.5.0](#v1.5.0) - 2021/07/05
 - [Version 1.4.0](#v1.4.0) - 2021/06/25
 - [Version 1.3.1](#v1.3.1) - 2021/06/08
@@ -32,6 +33,19 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 - [Version 1.0.1](#v1.0.1) - 2021/05/03
 - [Version 1.0.0](#v1.0.0) - 2021/05/03
 - [Version 0.1.0](#v0.1.0) - 2021/01/13
+
+## Next version
+
+## Version 1.6.0 <a name="v1.6.0"></a>
+
+### Added
+
+- Add Docker Compose configuration for development environment
+
+### Changed
+
+- Refactor CI & CD
+- Improved version number reaction in footer
 
 ## Version 1.5.0 <a name="v1.5.0"></a>
 
