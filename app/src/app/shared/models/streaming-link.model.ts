@@ -7,11 +7,12 @@ const LOGO_FORMAT: string = '.svg';
 export class StreamingLinkModel {
   id: number;
   link: string;
-  platform?: StreamingPlatformModel;
+  platform: StreamingPlatformModel;
 
   constructor(dto: StreamingLinkDTO) {
     this.id = dto.id;
     this.link = dto.link;
+    this.platform = StreamingPlatformModel[dto.platform];
   }
 
   getLogo(): string {

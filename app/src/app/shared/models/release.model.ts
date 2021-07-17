@@ -12,12 +12,13 @@ export class ReleaseModel {
   name: string;
   releaseDate: string;
   streamingLinks?: StreamingLinkModel[];
-  type?: ReleaseTypeModel;
+  type: ReleaseTypeModel;
 
   constructor(dto: ReleaseDTO) {
     this.id = dto.id;
     this.name = dto.name;
     this.releaseDate = dto.releaseDate;
+    this.type = ReleaseTypeModel[dto.type];
   }
 
   getArtists(): string {
