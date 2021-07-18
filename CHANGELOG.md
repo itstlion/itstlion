@@ -15,6 +15,7 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 
 ## List of releases
 
+- [Version 1.6.1](#v1.6.1) - 2021/07/18
 - [Version 1.6.0](#v1.6.0) - 2021/07/17
 - [Version 1.5.0](#v1.5.0) - 2021/07/05
 - [Version 1.4.0](#v1.4.0) - 2021/06/25
@@ -35,6 +36,16 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 - [Version 0.1.0](#v0.1.0) - 2021/01/13
 
 ## Next version
+
+## Version 1.6.1 <a name="v1.6.1"></a>
+
+### Added
+
+- Cover artwork for **Sunny Window** release
+
+### Fixed
+
+- Core module for using API v4 instead of API v3
 
 ## Version 1.6.0 <a name="v1.6.0"></a>
 

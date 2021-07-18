@@ -1,30 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import {
-  ArtistModel,
-  ReleaseModel,
-  ReleaseTypeModel,
-  StreamingLinkModel,
-  StreamingPlatformModel
-} from '@app/shared/models';
+import { ArtistModel, ReleaseModel, StreamingLinkModel } from '@app/shared/models';
 import { environment } from '@environments/environment';
-import { StreamingLinksService } from './streaming-links.service';
-import {
-  ArtistDTO,
-  ReleaseDTO,
-  ReleaseTypeDTO,
-  StreamingLinkDTO
-} from '../dtos';
+import { ArtistDTO, ReleaseDTO, StreamingLinkDTO } from '../dtos';
 
 const RELEASES_PATH: string = 'releases';
 
 @Injectable()
 export class ReleasesService {
-  constructor(
-    private httpClient: HttpClient,
-    private streamingLinksService: StreamingLinksService
-  ) {}
+  constructor(private httpClient: HttpClient) {}
 
   async getReleases(): Promise<ReleaseModel[]> {
     const url: string = `${environment.apiUrl}/${RELEASES_PATH}`;
@@ -50,23 +35,11 @@ export class ReleasesService {
     release: ReleaseDTO
   ): Promise<StreamingLinkModel[]> {
     const url: string = `${environment.apiUrl}/${release.streamingLinks.ref}`;
-    const streamingLinks: StreamingLinkDTO[] = await this.httpClient
-      .get<StreamingLinkDTO[]>(url)
+    const streamingLinks: StreamingLinkDTO[] = await this.httpClient.get<StreamingLinkDTO[]>(url)
       .toPromise();
     return streamingLinks.map(
-      (dto: StreamingLinkDTO): StreamingLinkModel =>
-        this.mapStreamingLinkToModel(dto)
+      (dto: StreamingLinkDTO): StreamingLinkModel => new StreamingLinkModel(dto)
     );
-  }
-
-  private async getTypeOfRelease(
-    release: ReleaseDTO
-  ): Promise<ReleaseTypeModel> {
-    const url: string = `${environment.apiUrl}/${release.type.ref}`;
-    const type: ReleaseTypeDTO = await this.httpClient
-      .get<ReleaseTypeDTO>(url)
-      .toPromise();
-    return ReleaseTypeModel[type];
   }
 
   private mapReleaseToModel(release: ReleaseDTO): ReleaseModel {
@@ -79,21 +52,6 @@ export class ReleasesService {
         model.streamingLinks = streamingLinks;
       }
     );
-    this.getTypeOfRelease(release).then((type: ReleaseTypeModel): void => {
-      model.type = type;
-    });
-    return model;
-  }
-
-  private mapStreamingLinkToModel(
-    streamingLink: StreamingLinkDTO
-  ): StreamingLinkModel {
-    const model: StreamingLinkModel = new StreamingLinkModel(streamingLink);
-    this.streamingLinksService
-      .getPlatformOfStreamingLink(streamingLink)
-      .then((platform: StreamingPlatformModel): void => {
-        model.platform = platform;
-      });
     return model;
   }
 }

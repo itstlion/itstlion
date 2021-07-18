@@ -1,7 +1,0 @@
-export enum StreamingPlatformDTO {
-  APPLE_MUSIC = 'APPLE_MUSIC',
-  DEEZER = 'DEEZER',
-  SPOTIFY = 'SPOTIFY',
-  YOUTUBE = 'YOUTUBE',
-  YOUTUBE_MUSIC = 'YOUTUBE_MUSIC'
-}
