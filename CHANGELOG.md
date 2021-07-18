@@ -15,6 +15,7 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 
 ## List of releases
 
+- [Version 1.6.2](#v1.6.2) - 2021/07/18
 - [Version 1.6.1](#v1.6.1) - 2021/07/18
 - [Version 1.6.0](#v1.6.0) - 2021/07/17
 - [Version 1.5.0](#v1.5.0) - 2021/07/05
@@ -36,6 +37,12 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 - [Version 0.1.0](#v0.1.0) - 2021/01/13
 
 ## Next version
+
+## Version 1.6.2 <a name="v1.6.2"></a>
+
+### Fixed
+
+- Application's version wasn't upgraded during last release
 
 ## Version 1.6.1 <a name="v1.6.1"></a>
 
