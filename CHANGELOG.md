@@ -42,6 +42,10 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 
 - Add dynamic anchor for releases (try `itstlion.com/releases#release-name`)
 
+### Changed
+
+- Update issue templates for GitHub repository
+
 ## Version 1.6.2 <a name="v1.6.2"></a>
 
 ### Fixed

@@ -1,11 +1,11 @@
 ---
 name: Hotfix Template
 about: Fix production bug
-title: HOTFIX
-labels: hotfix
+title: Hotfix v$VERSION
+labels: frontend, hotfix
 ---
 
-# Issue ID : TITLE
+# Issue ID : Hotfix v$VERSION
 
 ## Description
 
@@ -17,4 +17,6 @@ EMPTY
 
 ## Checklist
 
-- [ ] EMPTY
+- [ ] Fix
+- [ ] Upgrade application's version
+- [ ] Add new version in changelog
