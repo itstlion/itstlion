@@ -38,6 +38,10 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 
 ## Next version
 
+### Added
+
+- Add dynamic anchor for releases (try `itstlion.com/releases#release-name`)
+
 ## Version 1.6.2 <a name="v1.6.2"></a>
 
 ### Fixed
