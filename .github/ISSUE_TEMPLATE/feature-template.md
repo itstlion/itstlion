@@ -1,8 +1,8 @@
 ---
 name: Feature Template
 about: New feature
-title: FEATURE
-labels: feature
+title: Feature
+labels: feature, frontend
 ---
 
 # Issue ID : TITLE
@@ -18,3 +18,4 @@ EMPTY
 ## Checklist
 
 - [ ] EMPTY
+- [ ] Update next version in changelog
