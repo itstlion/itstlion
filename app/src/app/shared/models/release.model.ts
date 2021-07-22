@@ -29,12 +29,10 @@ export class ReleaseModel {
   }
 
   getArtwork(): string {
-    const splitSeparator: string = ' ';
-    const joinSeparator: string = '-';
-    const releaseName: string = this.name
-      .toLowerCase()
-      .split(splitSeparator)
-      .join(joinSeparator);
-    return `${ARTWORK_BASE_PATH}/${releaseName}${ARTWORK_FORMAT}`;
+    return `${ARTWORK_BASE_PATH}/${this.getNameInLowerCase()}${ARTWORK_FORMAT}`;
+  }
+
+  getNameInLowerCase(): string {
+    return this.name.toLowerCase().split(' ').join('-');
   }
 }
