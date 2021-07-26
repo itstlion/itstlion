@@ -53,6 +53,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         uses: actions/create-release@v1
         with:
+          body_path: ./.github/resources/release-body.md
           draft: true
           release_name: Release v${{ env.APP_VERSION }}
           tag_name: v${{ env.APP_VERSION }}
