@@ -20,7 +20,7 @@ services:
       - /var/lib/postgresql/data
   # ---------- Stage 2 ----------
   api:
-    image: ghcr.io/itstlion/itstlion-api:4.0.0-rc
+    image: ghcr.io/itstlion/itstlion-api:4.1.2-rc
     container_name: itstlion-api
     depends_on:
       database:
