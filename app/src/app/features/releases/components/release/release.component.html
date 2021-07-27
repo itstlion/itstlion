@@ -1,5 +1,5 @@
 <mat-card id="{{ release.getNameInLowerCase() }}" (click)="openStreamingLinksBottomSheet()">
-  <img mat-card-image src="{{ release.getArtwork() }}" />
+  <img mat-card-image src="data:image/jpeg;base64,{{ cover$ | async }}" alt="No cover available" />
   <mat-card-content>
     <mat-card-title>{{ release.name }}</mat-card-title>
     <mat-card-subtitle>
