@@ -40,6 +40,12 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 
 ## Next version
 
+> Coming soon
+
+### Changed
+
+- Release's covers are now retrieved from API
+
 ## Version 1.7.1 <a name="v1.7.1"></a>
 
 ### Added
