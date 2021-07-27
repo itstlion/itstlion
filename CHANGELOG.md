@@ -15,6 +15,7 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 
 ## List of releases
 
+- [Version 1.8.0](#v1.8.0) - 2021/07/27
 - [Version 1.7.1](#v1.7.1) - 2021/07/23
 - [Version 1.7.0](#v1.7.0) - 2021/07/22
 - [Version 1.6.2](#v1.6.2) - 2021/07/18
@@ -39,6 +40,14 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 - [Version 0.1.0](#v0.1.0) - 2021/01/13
 
 ## Next version
+
+> Coming soon
+
+## Version 1.8.0 <a name="v1.8.0"></a>
+
+### Changed
+
+- Release's covers are now retrieved from API
 
 ## Version 1.7.1 <a name="v1.7.1"></a>
 

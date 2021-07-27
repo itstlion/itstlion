@@ -3,9 +3,6 @@ import { ArtistModel } from './artist.model';
 import { ReleaseTypeModel } from './release-type.model';
 import { StreamingLinkModel } from './streaming-link.model';
 
-const ARTWORK_BASE_PATH: string = 'assets/images/releases';
-const ARTWORK_FORMAT: string = '.jpg';
-
 export class ReleaseModel {
   artists?: ArtistModel[];
   id: number;
@@ -26,10 +23,6 @@ export class ReleaseModel {
     return this.artists
       ?.map((artist: ArtistModel): string => artist.name)
       .join(separator);
-  }
-
-  getArtwork(): string {
-    return `${ARTWORK_BASE_PATH}/${this.getNameInLowerCase()}${ARTWORK_FORMAT}`;
   }
 
   getNameInLowerCase(): string {
