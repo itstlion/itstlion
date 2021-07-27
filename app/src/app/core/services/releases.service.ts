@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { ArtistModel, ReleaseModel, StreamingLinkModel } from '@app/shared/models';
+import {
+  ArtistModel,
+  ReleaseModel,
+  StreamingLinkModel
+} from '@app/shared/models';
 import { environment } from '@environments/environment';
 import { ArtistDTO, ReleaseDTO, StreamingLinkDTO } from '../dtos';
 
@@ -10,6 +14,12 @@ const RELEASES_PATH: string = 'releases';
 @Injectable()
 export class ReleasesService {
   constructor(private httpClient: HttpClient) {}
+
+  async getCoverOfRelease(releaseId: number): Promise<string> {
+    return await this.httpClient
+      .get<string>(`${environment.apiUrl}/${RELEASES_PATH}/${releaseId}/cover`)
+      .toPromise();
+  }
 
   async getReleases(): Promise<ReleaseModel[]> {
     const url: string = `${environment.apiUrl}/${RELEASES_PATH}`;
@@ -35,7 +45,8 @@ export class ReleasesService {
     release: ReleaseDTO
   ): Promise<StreamingLinkModel[]> {
     const url: string = `${environment.apiUrl}/${release.streamingLinks.ref}`;
-    const streamingLinks: StreamingLinkDTO[] = await this.httpClient.get<StreamingLinkDTO[]>(url)
+    const streamingLinks: StreamingLinkDTO[] = await this.httpClient
+      .get<StreamingLinkDTO[]>(url)
       .toPromise();
     return streamingLinks.map(
       (dto: StreamingLinkDTO): StreamingLinkModel => new StreamingLinkModel(dto)
