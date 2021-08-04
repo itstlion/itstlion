@@ -6,9 +6,6 @@ node_modules/
 out-tsc/
 tmp/
 
-## Files
-package-*.json
-
 # ---------- Jetbrains IDEs ----------
 
 ## Directories
