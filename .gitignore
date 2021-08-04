@@ -1,4 +1,15 @@
-# Jetbrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
+# ---------- Angular ----------
+
+## Directories
+dist/
+node_modules/
+out-tsc/
+tmp/
+
+## Files
+package-*.json
+
+# ---------- Jetbrains IDEs ----------
 
 ## Directories
 .idea*/
@@ -16,8 +27,7 @@ com_crashlytics_export_strings.xml
 crashlytics*.properties
 fabric.properties
 
-
-# macOS
+# ---------- macOS ----------
 
 ## Directories
 .apdisk/
@@ -40,8 +50,7 @@ Temporary Items/
 .Trashes
 .VolumeIcon.icns
 
-
-# Visual Studio Code
+# ---------- Visual Studio Code ----------
 
 ## Directories
 .history/
@@ -50,8 +59,7 @@ Temporary Items/
 ## File extensions
 *.code-workspace
 
-
-# WINDOWS
+# ---------- WINDOWS ----------
 
 ## Directories
 $RECYCLE.BIN/
