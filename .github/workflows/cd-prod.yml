@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - prod
-defaults:
-  run:
-    working-directory: ./app
 jobs:
   # ---------- Stage 1 ----------
   deploy-prod-image:

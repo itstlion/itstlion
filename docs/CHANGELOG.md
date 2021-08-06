@@ -43,6 +43,10 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 
 > Coming soon
 
+## Changed
+
+- Move source code in the project's root folder
+
 ## Version 1.8.0 <a name="v1.8.0"></a>
 
 ### Changed

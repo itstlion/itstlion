@@ -5,9 +5,6 @@ on:
       - develop
       - master
       - prod
-defaults:
-  run:
-    working-directory: ./app
 jobs:
   build:
     name: Build application
