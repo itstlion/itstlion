@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatRippleModule } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -22,7 +21,6 @@ import { FooterComponent, HeaderComponent } from './components';
     MatDividerModule,
     MatListModule,
     MatProgressSpinnerModule,
-    MatRippleModule,
     MatSnackBarModule
   ],
   imports: [MatToolbarModule]
