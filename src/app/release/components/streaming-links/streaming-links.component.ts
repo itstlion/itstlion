@@ -15,6 +15,14 @@ class StreamingLinkModel {
     this.link = dto.link;
     this.platform = StreamingPlatformModel[dto.platform];
   }
+
+  get formattedPlatform(): string {
+    return this.platform.toLowerCase().split(' ').join('-');
+  }
+
+  get platformLogo(): string {
+    return `assets/images/streaming-platforms/${this.formattedPlatform}.svg`;
+  }
 }
 
 enum StreamingPlatformModel {
@@ -33,7 +41,6 @@ enum StreamingPlatformModel {
 export class StreamingLinksComponent implements OnInit {
   releaseName: string;
   streamingLinks: StreamingLinkModel[];
-  subtitle: string;
 
   constructor(
     @Inject(MAT_BOTTOM_SHEET_DATA)
@@ -51,7 +58,6 @@ export class StreamingLinksComponent implements OnInit {
     this.streamingLinks = this.data.links.map(
       (dto: StreamingLinkDTO): StreamingLinkModel => new StreamingLinkModel(dto)
     );
-    this.subtitle = 'Choose a platform';
   }
 
   openStreamingLink(link: string): void {

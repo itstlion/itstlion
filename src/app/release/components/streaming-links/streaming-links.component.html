@@ -1,7 +1,7 @@
 <div id="container">
   <div>
     <span id="title">{{ releaseName }}</span>
-    <span id="subtitle">{{ subtitle }}</span>
+    <span id="subtitle">Choose a platform</span>
   </div>
   <mat-nav-list>
     <div *ngFor="let streamingLink of streamingLinks">
@@ -10,10 +10,7 @@
           <span>{{ streamingLink.platform }}</span>
           <div id="logo-container">
             <div>
-              <img
-                [ngClass]="streamingLink.platform.toLowerCase().split(' ').join('-')"
-                src="assets/images/streaming-platforms/{{ streamingLink.platform.toLowerCase().split(' ').join('-') }}.svg"
-              />
+              <img [ngClass]="streamingLink.formattedPlatform" src="{{ streamingLink.platformLogo }}"/>
             </div>
           </div>
         </div>
