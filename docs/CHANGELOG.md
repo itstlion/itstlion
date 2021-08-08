@@ -43,9 +43,10 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 
 > Coming soon
 
-## Changed
+### Changed
 
 - Move source code in the project's root folder
+- Internal architecture
 
 ## Version 1.8.0 <a name="v1.8.0"></a>
 

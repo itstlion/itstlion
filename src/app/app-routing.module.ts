@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ReleasesModule } from './features/releases/releases.module';
+import { ReleaseModule } from './release/release.module';
 
 const routes: Routes = [
-  { path: 'releases', loadChildren: _loadReleasesModule },
+  { path: 'releases', loadChildren: _loadReleaseModule },
   { path: '**', redirectTo: 'releases', pathMatch: 'full' }
 ];
 
-async function _loadReleasesModule(): Promise<ReleasesModule> {
-  return (await import('./features/releases/releases.module')).ReleasesModule;
+async function _loadReleaseModule(): Promise<ReleaseModule> {
+  return (await import('./release/release.module')).ReleaseModule;
 }
 
 @NgModule({

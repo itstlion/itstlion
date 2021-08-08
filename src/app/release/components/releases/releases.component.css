@@ -28,7 +28,31 @@ mat-card-title {
   color: var(--title-2-color);
 }
 
+.release-container {
+  flex: 0 1 16em;
+  margin: 1em;
+}
+
 .release-type {
   color: var(--subtitle-color);
   text-align: end;
+}
+
+#releases-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1em;
+}
+
+#reload-container > button {
+  border-color: var(--white);
+  color: var(--white);
+  font-size: 1.125em;
+}
+
+#reload-container,
+#spinner-container {
+  display: flex;
+  justify-content: center;
 }

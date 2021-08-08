@@ -6,6 +6,7 @@ export interface ReleaseDTO {
   releaseDate: string;
   type: ReleaseTypeDTO;
   artists: ApiReferenceDTO;
+  cover: ApiReferenceDTO;
   streamingLinks: ApiReferenceDTO;
 }
 
