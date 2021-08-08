@@ -1,0 +1,58 @@
+mat-card {
+  background-color: var(--surface-color);
+  color: var(--on-surface-color);
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  user-select: none;
+}
+
+mat-card:hover {
+  box-shadow: 0 0 1em var(--surface-2-color);
+  background-color: var(--surface-2-color);
+}
+
+mat-card > img {
+  object-fit: cover;
+}
+
+mat-card-subtitle > div {
+  display: grid;
+  grid-template-columns: 75% 25%;
+}
+
+mat-card-title {
+  font-size: 1em;
+}
+
+.release-artists {
+  color: var(--title-2-color);
+}
+
+.release-container {
+  flex: 0 1 16em;
+  margin: 1em;
+}
+
+.release-type {
+  color: var(--subtitle-color);
+  text-align: end;
+}
+
+#releases-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1em;
+}
+
+#reload-container > button {
+  border-color: var(--white);
+  color: var(--white);
+  font-size: 1.125em;
+}
+
+#reload-container,
+#spinner-container {
+  display: flex;
+  justify-content: center;
+}
