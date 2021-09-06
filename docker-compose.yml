@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  # ---------- Stage 1 ----------
+  database:
+    image: postgres:13.2-alpine
+    container_name: itstlion-db
+    environment:
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_DB=local
+      - POSTGRES_USER=local
+      - POSTGRES_PASSWORD=local
+    healthcheck:
+      test: pg_isready -h localhost -p 5432 -U local
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    ports:
+      - 5432:5432
+    volumes:
+      - /var/lib/postgresql/data
+  # ---------- Stage 2 ----------
+  api:
+    image: ghcr.io/itstlion/itstlion-api:4.3.0-rc
+    container_name: itstlion-api
+    depends_on:
+      database:
+        condition: service_healthy
+    environment:
+      - DB_URL=jdbc:postgresql://database/local
+    ports:
+      - 1234:1234

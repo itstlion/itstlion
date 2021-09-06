@@ -1,0 +1,21 @@
+<div id="container">
+  <div>
+    <span id="title">{{ releaseName }}</span>
+    <span id="subtitle">Choose a platform</span>
+  </div>
+  <mat-nav-list>
+    <div *ngFor="let streamingLink of streamingLinks">
+      <a (click)="openStreamingLink(streamingLink.link)" mat-list-item>
+        <div class="streaming-platform" mat-line>
+          <span>{{ streamingLink.platform }}</span>
+          <div id="logo-container">
+            <div>
+              <img [ngClass]="streamingLink.formattedPlatform" src="{{ streamingLink.platformLogo }}"/>
+            </div>
+          </div>
+        </div>
+      </a>
+      <mat-divider *ngIf="isNotLastItem(streamingLink)"></mat-divider>
+    </div>
+  </mat-nav-list>
+</div>
