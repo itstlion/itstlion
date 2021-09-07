@@ -15,6 +15,7 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 
 ## List of releases
 
+- [Version 2.0.1](#v2.0.1) - 2021/09/07
 - [Version 2.0.0](#v2.0.0) - 2021/08/08
 - [Version 1.8.0](#v1.8.0) - 2021/07/27
 - [Version 1.7.1](#v1.7.1) - 2021/07/23
@@ -43,6 +44,12 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 ## Next version
 
 > Coming soon
+
+## Version 2.0.1 <a name="v2.0.1"></a>
+
+### Security
+
+- Fix vulnerabilities introduced by `tar` dependency
 
 ## Version 2.0.0 <a name="v2.0.0"></a>
 
