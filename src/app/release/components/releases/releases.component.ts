@@ -73,16 +73,29 @@ export class ReleasesComponent implements OnInit {
   }
 
   private async getAllReleases(): Promise<void> {
+    const getArtistsAndCoverOfRelease = async (
+      dto: ReleaseDTO
+    ): Promise<void> => {
+      const artists$: Promise<ArtistDTO[]> =
+        this.releaseService.getAllArtistsOfRelease(dto);
+      const cover$: Promise<string> =
+        this.releaseService.getCoverOfRelease(dto);
+      const results: [ArtistDTO[], string] = await Promise.all([
+        artists$,
+        cover$
+      ]);
+      const artists: string[] = results[0].map(
+        (dto: ArtistDTO): string => dto.name
+      );
+      const release = new ReleaseModel(dto, artists, results[1]);
+      this.releases.push(release);
+    };
+
     this.isLoadingData = true;
-    this.releases = [];
     const releases: ReleaseDTO[] = await this.releaseService.getAllReleases();
-    releases.forEach(async (dto: ReleaseDTO): Promise<void> => {
-      const artists: string[] = (
-        await this.releaseService.getAllArtistsOfRelease(dto)
-      ).map((dto: ArtistDTO): string => dto.name);
-      const cover: string = await this.releaseService.getCoverOfRelease(dto);
-      this.releases.push(new ReleaseModel(dto, artists, cover));
-    });
+    this.releases = [];
+    for (const dto of releases) await getArtistsAndCoverOfRelease(dto);
+    this.isLoadingData = false;
   }
 
   private initReloadButtonText(): void {
