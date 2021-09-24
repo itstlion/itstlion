@@ -1,6 +1,6 @@
 <div
   id="releases-container"
-  *ngIf="releases.length > 0; else loading"
+  *ngIf="!isLoadingData && releases.length > 0; else loading"
 >
   <div class="release-container" *ngFor="let release of releases">
     <mat-card id="{{ release.name.toLowerCase().split(' ').join('-') }}" (click)="openStreamingLinks(release)">
@@ -17,11 +17,13 @@
     </mat-card>
   </div>
 </div>
+
 <ng-template #loading>
   <div id="spinner-container" *ngIf="isLoadingData; else reload">
     <mat-spinner></mat-spinner>
   </div>
 </ng-template>
+
 <ng-template #reload>
   <div id="reload-container">
     <button (click)="reloadData()" mat-stroked-button>
