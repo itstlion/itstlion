@@ -1,10 +1,13 @@
 name: CI
 on:
   pull_request:
-    branches:
-      - develop
-      - master
-      - prod
+    branches: [develop, master]
+    paths:
+      - .github/workflows/ci.yml
+      - angular.json
+      - package*.json
+      - src/**
+      - tsconfig*.json
 jobs:
   build:
     name: Build application
