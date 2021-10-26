@@ -5,8 +5,6 @@ title: Feature
 labels: feature, frontend
 ---
 
-# Issue ID : TITLE
-
 ## Description
 
 EMPTY
@@ -18,4 +16,3 @@ EMPTY
 ## Checklist
 
 - [ ] EMPTY
-- [ ] Update next version in changelog
