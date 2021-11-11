@@ -5,9 +5,7 @@ title: Release v$VERSION
 labels: frontend, release
 ---
 
-# Issue ID : Release v$VERSION
-
 ## Checklist
 
 - [ ] Upgrade application's version
-- [ ] Update changelog for this new release
+- [ ] Add notable changes of this release in changelog

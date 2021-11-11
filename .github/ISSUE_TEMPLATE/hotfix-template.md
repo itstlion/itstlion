@@ -5,15 +5,9 @@ title: Hotfix v$VERSION
 labels: frontend, hotfix
 ---
 
-# Issue ID : Hotfix v$VERSION
-
 ## Description
 
 EMPTY
-
-## Dependencies
-
-- [ ] EMPTY
 
 ## Checklist
 
