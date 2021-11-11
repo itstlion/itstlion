@@ -7,6 +7,7 @@ import {
 } from '../streaming-links/streaming-links.component';
 import { ArtistDTO, ReleaseDTO, StreamingLinkDTO } from '../../dtos';
 import { NotificationService, ReleaseService } from '../../services';
+import { HttpErrorResponse } from '@angular/common/http';
 
 class ReleaseModel {
   artists: string[];
@@ -54,12 +55,20 @@ export class ReleasesComponent implements OnInit {
   }
 
   async openStreamingLinks(release: ReleaseModel): Promise<void> {
-    const links: StreamingLinkDTO[] =
-      await this.releaseService.getAllStreamingLinksOfRelease(release.id);
-    this.bottomSheet.open(StreamingLinksComponent, {
-      data: { releaseName: release.name, links },
-      panelClass: STREAMING_LINKS_PANEL_CLASS
-    });
+    try {
+      const links: StreamingLinkDTO[] =
+        await this.releaseService.getAllStreamingLinksOfRelease(release.id);
+      this.bottomSheet.open(StreamingLinksComponent, {
+        data: { releaseName: release.name, links },
+        panelClass: STREAMING_LINKS_PANEL_CLASS
+      });
+    } catch (error) {
+      if (error instanceof HttpErrorResponse) {
+        const content: string =
+          'No links are currently available for this release!';
+        this.notificationService.notifyError(content);
+      }
+    }
   }
 
   reloadData(): void {

@@ -15,6 +15,7 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 
 ## List of releases
 
+- [Version 2.0.3](#v2.0.3) - 2021/11/11
 - [Version 2.0.2](#v2.0.2) - 2021/09/24
 - [Version 2.0.1](#v2.0.1) - 2021/09/07
 - [Version 2.0.0](#v2.0.0) - 2021/08/08
@@ -45,6 +46,12 @@ Visit _[Keep a Changelog][changelog]_ for more information.
 ## Next version
 
 > Coming soon
+
+## Version 2.0.3 <a name="v2.0.3"></a>
+
+### Added
+
+- Error handling when a release doesn't have links.
 
 ## Version 2.0.2 <a name="v2.0.2"></a>
 
