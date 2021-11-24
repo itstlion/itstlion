@@ -1,5 +1,11 @@
-name: CI
-on: workflow_dispatch
+name: Continuous Integration
+on:
+  push:
+    branches: [master]
+    paths:
+      - '**/*.json'
+      - .github/workflows/*
+      - src/**
 jobs:
   build:
     name: Build application
