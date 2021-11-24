@@ -1,13 +1,5 @@
 name: CD
-on:
-  push:
-    branches: [master]
-    paths:
-      - .github/workflows/ci.yml
-      - angular.json
-      - package*.json
-      - src/**
-      - tsconfig*.json
+on: workflow_dispatch
 jobs:
   # ---------- Stage 1 ----------
   deploy:
