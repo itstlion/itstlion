@@ -1,9 +1,8 @@
---
+---
 name: Release Template
 about: New release
 title: Release version $VERSION
 labels: release
-
 ---
 
 ## Dependencies
