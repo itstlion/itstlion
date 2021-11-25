@@ -34,9 +34,10 @@ jobs:
       VERSION: ${{needs.get-version.outputs.version}}
     steps:
       - name: Set composed environment variables
-        run: echo "GITHUB_IMAGE=$APP/$APP" >> $GITHUB_ENV &&
-          echo "HEROKU_IMAGE=$APP/$HEROKU_PROCESS" >> $GITHUB_ENV &&
-          echo "HEROKU_REGISTRY=registry.$HEROKU" >> $GITHUB_ENV
+        run: echo "GITHUB_IMAGE=$GITHUB_REGISTRY/$APP/$APP" >> $GITHUB_ENV &&
+          echo "HEROKU_REGISTRY=registry.$HEROKU" >> $GITHUB_ENV &&
+          echo "HEROKU_IMAGE=$HEROKU_REGISTRY/$APP/$HEROKU_PROCESS" >>
+          $GITHUB_ENV
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install required dependencies
@@ -44,26 +45,24 @@ jobs:
       - name: Package application
         run: npm run build:prod
       - name: Build image
-        run: docker build -t $GITHUB_REGISTRY/$GITHUB_IMAGE .
+        run: docker build -t $GITHUB_IMAGE .
       - name: Prepare image for GitHub
-        run: docker tag $GITHUB_REGISTRY/$GITHUB_IMAGE \
-          "$GITHUB_REGISTRY/$GITHUB_IMAGE:$VERSION"
+        run: docker tag $GITHUB_IMAGE $GITHUB_IMAGE:$VERSION
       - name: Prepare image for Heroku
-        run: docker tag $GITHUB_REGISTRY/$GITHUB_IMAGE \
-          $HEROKU_REGISTRY/$HEROKU_IMAGE
+        run: docker tag $GITHUB_IMAGE $HEROKU_IMAGE
       - name: Login to GitHub registry
         env:
           TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: echo $TOKEN | docker login $GITHUB_REGISTRY -u _ --password-stdin
       - name: Push images to GitHub registry
-        run: docker push -a $GITHUB_REGISTRY/$GITHUB_IMAGE
+        run: docker push -a $GITHUB_IMAGE
       - name: Logout from GitHub registry
         run: docker logout $GITHUB_REGISTRY
       - name: Login to Heroku Registry
         run: echo $HEROKU_API_KEY |
           docker login $HEROKU_REGISTRY -u _ --password-stdin
       - name: Push image to Heroku registry
-        run: docker push $HEROKU_REGISTRY/$HEROKU_IMAGE
+        run: docker push $HEROKU_IMAGE
       - name: Logout from Heroku registry
         run: docker logout $HEROKU_REGISTRY
   # ---------- Stage 3 ----------
