@@ -47,7 +47,7 @@ jobs:
         run: docker build -t $GITHUB_REGISTRY/$GITHUB_IMAGE .
       - name: Prepare image for GitHub
         run: docker tag $GITHUB_REGISTRY/$GITHUB_IMAGE \
-          $GITHUB_REGISTRY/$GITHUB_IMAGE:$VERSION
+          "$GITHUB_REGISTRY/$GITHUB_IMAGE:$VERSION"
       - name: Prepare image for Heroku
         run: docker tag $GITHUB_REGISTRY/$GITHUB_IMAGE \
           $HEROKU_REGISTRY/$HEROKU_IMAGE
