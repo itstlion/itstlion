@@ -4,9 +4,9 @@ on:
     workflows: [Continuous Integration]
     types: [completed]
 env:
+  APP: itstlion
   HEROKU: heroku.com
   HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
-  HEROKU_APP: itstlion
   HEROKU_PROCESS: web
 jobs:
   # ---------- Stage 1 ----------
@@ -30,11 +30,13 @@ jobs:
     runs-on: ubuntu-latest
     needs: get-version
     env:
-      GITHUB_IMAGE: itstlion/itstlion
       GITHUB_REGISTRY: ghcr.io
-      HEROKU_REGISTRY: registry.${{env.HEROKU}}
       VERSION: ${{needs.get-version.outputs.version}}
     steps:
+      - name: Set composed environment variables
+        run: echo "GITHUB_IMAGE=$APP/$APP" >> $GITHUB_ENV &&
+          echo "HEROKU_IMAGE=$APP/$HEROKU_PROCESS" >> $GITHUB_ENV &&
+          echo "HEROKU_REGISTRY=registry.$HEROKU" >> $GITHUB_ENV
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install required dependencies
@@ -48,7 +50,7 @@ jobs:
           $GITHUB_REGISTRY/$GITHUB_IMAGE:$VERSION
       - name: Prepare image for Heroku
         run: docker tag $GITHUB_REGISTRY/$GITHUB_IMAGE \
-          $HEROKU_REGISTRY/$HEROKU_APP/$HEROKU_PROCESS
+          $HEROKU_REGISTRY/$HEROKU_IMAGE
       - name: Login to GitHub registry
         env:
           TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -61,7 +63,7 @@ jobs:
         run: echo $HEROKU_API_KEY |
           docker login $HEROKU_REGISTRY -u _ --password-stdin
       - name: Push image to Heroku registry
-        run: docker push $HEROKU_REGISTRY/$HEROKU_APP/$HEROKU_PROCESS
+        run: docker push $HEROKU_REGISTRY/$HEROKU_IMAGE
       - name: Logout from Heroku registry
         run: docker logout $HEROKU_REGISTRY
   # ---------- Stage 3 ----------
@@ -75,9 +77,9 @@ jobs:
       - name: Login to Heroku
         env:
           FILE: .netrc
-          LOGIN: ${{ secrets.HEROKU_LOGIN }}
+          LOGIN: ${{secrets.ADMIN_EMAIL}}
         run: echo "machine api.$HEROKU" > $FILE &&
           echo "  login $LOGIN" >> $FILE &&
           echo "  password $HEROKU_API_KEY" >> $FILE
       - name: Deploy image
-        run: heroku container:release $HEROKU_PROCESS -a $HEROKU_APP
+        run: heroku container:release $HEROKU_PROCESS -a $APP
