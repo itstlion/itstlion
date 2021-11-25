@@ -33,10 +33,12 @@ jobs:
       GITHUB_REGISTRY: ghcr.io
       VERSION: ${{needs.get-version.outputs.version}}
     steps:
-      - name: Set composed environment variables
-        run: echo "GITHUB_IMAGE=$GITHUB_REGISTRY/$APP/$APP" >> $GITHUB_ENV &&
-          echo "HEROKU_REGISTRY=registry.$HEROKU" >> $GITHUB_ENV &&
-          echo "HEROKU_IMAGE=$HEROKU_REGISTRY/$APP/$HEROKU_PROCESS" >>
+      - name: Set GITHUB_IMAGE environment variable
+        run: echo "GITHUB_IMAGE=$GITHUB_REGISTRY/$APP/$APP" >> $GITHUB_ENV
+      - name: Set HEROKU_REGISTRY environment variable
+        run: echo "HEROKU_REGISTRY=registry.$HEROKU" >> $GITHUB_ENV
+      - name: Set HEROKU_IMAGE environment variable
+        run: echo "HEROKU_IMAGE=$HEROKU_REGISTRY/$APP/$HEROKU_PROCESS" >>
           $GITHUB_ENV
       - name: Checkout code
         uses: actions/checkout@v2
