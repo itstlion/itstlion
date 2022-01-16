@@ -1,21 +1,26 @@
 <div id="container">
   <div>
-    <span id="title">{{ releaseName }}</span>
+    <span id="title">{{ data.name }}</span>
     <span id="subtitle">Choose a platform</span>
   </div>
   <mat-nav-list>
-    <div *ngFor="let streamingLink of streamingLinks">
-      <a (click)="openStreamingLink(streamingLink.link)" mat-list-item>
+    <div *ngFor="let link of data.links">
+      <a (click)="openStreamingLink(link.link)" mat-list-item>
         <div class="streaming-platform" mat-line>
-          <span>{{ streamingLink.platform }}</span>
+          <span>{{ link.platform }}</span>
           <div id="logo-container">
             <div>
-              <img [ngClass]="streamingLink.formattedPlatform" src="{{ streamingLink.platformLogo }}"/>
+              <img
+                [ngClass]="toKebabCase(link.platform)"
+                src="assets/images/streaming-platforms/{{
+                  toKebabCase(link.platform)
+                }}.svg"
+              />
             </div>
           </div>
         </div>
       </a>
-      <mat-divider *ngIf="isNotLastItem(streamingLink)"></mat-divider>
+      <mat-divider *ngIf="isNotLastItem(link)"></mat-divider>
     </div>
   </mat-nav-list>
 </div>

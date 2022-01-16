@@ -1,15 +1,21 @@
-<div
-  id="releases-container"
-  *ngIf="!isLoadingData && releases.length > 0; else loading"
->
-  <div class="release-container" *ngFor="let release of releases">
-    <mat-card id="{{ release.name.toLowerCase().split(' ').join('-') }}" (click)="openStreamingLinks(release)">
-      <img mat-card-image src="data:image/jpeg;base64,{{release.cover}}" alt="No cover available"/>
+<div id="releases-container">
+  <div *ngFor="let release of releases" class="release-container">
+    <mat-card
+      (click)="openStreamingLinks(release)"
+      id="{{ toKebabCase(release.name) }}"
+    >
+      <img
+        alt="No cover available"
+        mat-card-image
+        src="assets/images/covers/{{ toKebabCase(release.name) }}.jpg"
+      />
       <mat-card-content>
         <mat-card-title>{{ release.name }}</mat-card-title>
         <mat-card-subtitle>
           <div>
-            <span class="release-artists">{{ release.artists.join(', ') }}</span>
+            <span class="release-artists">
+              {{ release.artists.join(', ') }}
+            </span>
             <span class="release-type">{{ release.type }}</span>
           </div>
         </mat-card-subtitle>
@@ -17,17 +23,3 @@
     </mat-card>
   </div>
 </div>
-
-<ng-template #loading>
-  <div id="spinner-container" *ngIf="isLoadingData; else reload">
-    <mat-spinner></mat-spinner>
-  </div>
-</ng-template>
-
-<ng-template #reload>
-  <div id="reload-container">
-    <button (click)="reloadData()" mat-stroked-button>
-      {{ reloadButtonText }}
-    </button>
-  </div>
-</ng-template>

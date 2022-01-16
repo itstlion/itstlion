@@ -44,15 +44,3 @@ mat-card-title {
   justify-content: center;
   margin: 1em;
 }
-
-#reload-container > button {
-  border-color: var(--white);
-  color: var(--white);
-  font-size: 1.125em;
-}
-
-#reload-container,
-#spinner-container {
-  display: flex;
-  justify-content: center;
-}
