@@ -16,6 +16,10 @@ All notable changes to this project will be documented in this file.
 
 ## Work in progress
 
+### Changed
+
+- Retrieve releases locally.
+
 ## Version 2.0.3 - 2021/11/11
 
 ### Added
