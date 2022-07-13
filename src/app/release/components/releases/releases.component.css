@@ -1,3 +1,17 @@
+@keyframes leftright {
+  0%,
+  20% {
+    transform: translateX(0%);
+    left: 0%;
+  }
+
+  80%,
+  100% {
+    transform: translateX(-100%);
+    left: 100%;
+  }
+}
+
 mat-card {
   background-color: var(--surface-color);
   color: var(--on-surface-color);
@@ -16,16 +30,30 @@ mat-card > img {
 }
 
 mat-card-subtitle > div {
-  display: grid;
-  grid-template-columns: 75% 25%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
 }
 
 mat-card-title {
   font-size: 1em;
 }
 
+.animate-text {
+  position: relative;
+  animation: leftright 3s infinite linear;
+}
+
 .release-artists {
   color: var(--title-2-color);
+  max-width: 10.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.release-artists > span {
+  display: inline-block;
 }
 
 .release-container {
