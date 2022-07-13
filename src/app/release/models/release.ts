@@ -20,6 +20,28 @@ export interface Release {
 
 export const RELEASES: Release[] = [
   {
+    name: 'Frozen',
+    publicationDate: '2022-07-13',
+    type: 'Single',
+    artists: ['Skengybeatz', 'Bertram Kvist', 'T.Lion'],
+    links: [
+      {
+        platform: 'Apple Music',
+        link: 'https://music.apple.com/gb/album/frozen-single/1630985365'
+      },
+      { platform: 'Deezer', link: 'https://www.deezer.com/fr/album/333045927' },
+      {
+        platform: 'Spotify',
+        link: 'https://open.spotify.com/track/38xWoM5sWIRD0Cgjh7XGNZ'
+      },
+      { platform: 'YouTube', link: 'https://youtu.be/s-uoA165Bsk' },
+      {
+        platform: 'YouTube Music',
+        link: 'https://music.youtube.com/playlist?list=OLAK5uy_nCRaDLULppV31LYlLZMchsernffQgrNok'
+      }
+    ]
+  },
+  {
     name: 'High Tide',
     publicationDate: '2021-11-26',
     type: 'Single',
