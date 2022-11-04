@@ -306,7 +306,22 @@ export const RELEASES: Release[] = [
     publicationDate: '2020-02-22',
     type: 'Single',
     artists: ['T.Lion'],
-    links: [{ platform: 'YouTube', link: 'https://youtu.be/2vWs85pRs2E' }]
+    links: [
+      {
+        platform: 'Apple Music',
+        link: 'https://music.apple.com/fr/album/reminiscing-single/1644086333'
+      },
+      { platform: 'Deezer', link: 'https://www.deezer.com/fr/album/354743937' },
+      {
+        platform: 'Spotify',
+        link: 'https://open.spotify.com/album/4UVj3ziR9KaGOXpotGOZVh'
+      },
+      { platform: 'YouTube', link: 'https://youtu.be/2vWs85pRs2E' },
+      {
+        platform: 'YouTube Music',
+        link: 'https://music.youtube.com/playlist?list=OLAK5uy_lpxL0mN93lveyl3H9kBdLexuC3Wjo3Uic'
+      }
+    ]
   },
   {
     name: 'Beginning',
