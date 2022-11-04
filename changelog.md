@@ -16,6 +16,10 @@ All notable changes to this project will be documented in this file.
 
 ## Work in progress
 
+### Added
+
+Add missing streaming links to releases ([#159](https://github.com/itstlion/web/issues/159)).
+
 ## Version 2.1.0 - 2022/01/16
 
 ### Changed
