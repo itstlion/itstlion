@@ -196,7 +196,22 @@ export const RELEASES: Release[] = [
     publicationDate: '2020-11-26',
     type: 'Single',
     artists: ['T.Lion'],
-    links: [{ platform: 'YouTube', link: 'https://youtu.be/AtnGsodKwC8' }]
+    links: [
+      {
+        platform: 'Apple Music',
+        link: 'https://music.apple.com/fr/album/thinking-about-you-single/1646612538'
+      },
+      { platform: 'Deezer', link: 'https://www.deezer.com/fr/album/359628987' },
+      {
+        platform: 'Spotify',
+        link: 'https://open.spotify.com/album/7uYwRHV4iUvqyT8E97M33n'
+      },
+      { platform: 'YouTube', link: 'https://youtu.be/AtnGsodKwC8' },
+      {
+        platform: 'YouTube Music',
+        link: 'https://music.youtube.com/playlist?list=OLAK5uy_lp4DUJDAojns8wMyQsbMs8D2rZ_w8U1l8'
+      }
+    ]
   },
   {
     name: 'My Sunshine',
