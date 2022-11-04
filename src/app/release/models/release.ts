@@ -284,7 +284,22 @@ export const RELEASES: Release[] = [
     publicationDate: '2020-04-25',
     type: 'Single',
     artists: ['T.Lion'],
-    links: [{ platform: 'YouTube', link: 'https://youtu.be/dL4_2uuLrrw' }]
+    links: [
+      {
+        platform: 'Apple Music',
+        link: 'https://music.apple.com/fr/album/cr%C3%A9puscule-single/1644086627'
+      },
+      { platform: 'Deezer', link: 'https://www.deezer.com/fr/album/354741877' },
+      {
+        platform: 'Spotify',
+        link: 'https://open.spotify.com/album/07YBkei9Ghtp6LRsjsCu0I'
+      },
+      { platform: 'YouTube', link: 'https://youtu.be/dL4_2uuLrrw' },
+      {
+        platform: 'YouTube Music',
+        link: 'https://music.youtube.com/playlist?list=OLAK5uy_n5x9vq-wf3xEPP9nnKZ61iTpi6NFUgkrI'
+      }
+    ]
   },
   {
     name: 'Reminiscing',
