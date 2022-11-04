@@ -90,7 +90,22 @@ export const RELEASES: Release[] = [
     publicationDate: '2021-09-24',
     type: 'Single',
     artists: ['T.Lion'],
-    links: [{ platform: 'YouTube', link: 'https://youtu.be/ed2_czk71os' }]
+    links: [
+      {
+        platform: 'Apple Music',
+        link: 'https://music.apple.com/fr/album/sunset-dreamer-single/1648770714'
+      },
+      { platform: 'Deezer', link: 'https://www.deezer.com/fr/album/363407147' },
+      {
+        platform: 'Spotify',
+        link: 'https://open.spotify.com/album/5uho1Lrk4dHYw6QRVKj37q'
+      },
+      { platform: 'YouTube', link: 'https://youtu.be/ed2_czk71os' },
+      {
+        platform: 'YouTube Music',
+        link: 'https://music.youtube.com/playlist?list=OLAK5uy_k58ZlUzIAwsSTWi_DbD6Il3kDuljZBeM4'
+      }
+    ]
   },
   {
     name: 'Sunny Window',
