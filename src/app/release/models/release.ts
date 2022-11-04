@@ -262,7 +262,22 @@ export const RELEASES: Release[] = [
     publicationDate: '2020-06-27',
     type: 'Single',
     artists: ['T.Lion'],
-    links: [{ platform: 'YouTube', link: 'https://youtu.be/lt0tLs9k190' }]
+    links: [
+      {
+        platform: 'Apple Music',
+        link: 'https://music.apple.com/fr/album/dans-le-silence-single/1646612530'
+      },
+      { platform: 'Deezer', link: 'https://www.deezer.com/fr/album/359632247' },
+      {
+        platform: 'Spotify',
+        link: 'https://open.spotify.com/album/3B4avMFWc9gEwdWLUN6s7x'
+      },
+      { platform: 'YouTube', link: 'https://youtu.be/lt0tLs9k190' },
+      {
+        platform: 'YouTube Music',
+        link: 'https://music.youtube.com/playlist?list=OLAK5uy_k-OR4DH9l1tFyza7ArqpIEj3tCaMLhgKM'
+      }
+    ]
   },
   {
     name: 'Crépuscule',
