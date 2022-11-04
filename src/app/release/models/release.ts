@@ -218,7 +218,22 @@ export const RELEASES: Release[] = [
     publicationDate: '2020-10-16',
     type: 'Single',
     artists: ['T.Lion'],
-    links: [{ platform: 'YouTube', link: 'https://youtu.be/V-DA_YbzfgM' }]
+    links: [
+      {
+        platform: 'Apple Music',
+        link: 'https://music.apple.com/fr/album/my-sunshine-single/1646612257'
+      },
+      { platform: 'Deezer', link: 'https://www.deezer.com/fr/album/359632807' },
+      {
+        platform: 'Spotify',
+        link: 'https://open.spotify.com/album/5HfNopJr687fXPdtU9HhcU'
+      },
+      { platform: 'YouTube', link: 'https://youtu.be/V-DA_YbzfgM' },
+      {
+        platform: 'YouTube Music',
+        link: 'https://music.youtube.com/playlist?list=OLAK5uy_mDbGId4ECxFCSH_XqUz_UmbHVJ4K4YsLg'
+      }
+    ]
   },
   {
     name: 'Jasmine',
