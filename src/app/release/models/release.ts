@@ -68,7 +68,22 @@ export const RELEASES: Release[] = [
     publicationDate: '2021-10-29',
     type: 'EP',
     artists: ['T.Lion', 'ONE.dot'],
-    links: [{ platform: 'YouTube', link: 'https://youtu.be/1i4YEb6fvIQ' }]
+    links: [
+      {
+        platform: 'Apple Music',
+        link: 'https://music.apple.com/fr/album/friends-and-fam-ep/1652347409'
+      },
+      { platform: 'Deezer', link: 'https://www.deezer.com/fr/album/371842297' },
+      {
+        platform: 'Spotify',
+        link: 'https://open.spotify.com/album/56T8Qmu11ZGW6O1DfN8yvm'
+      },
+      { platform: 'YouTube', link: 'https://youtu.be/1i4YEb6fvIQ' },
+      {
+        platform: 'YouTube Music',
+        link: 'https://music.youtube.com/playlist?list=OLAK5uy_lV7IUyt5rZ7VCI9LsEiGzt9YxSoETzmKM'
+      }
+    ]
   },
   {
     name: 'Sunset Dreamer',
