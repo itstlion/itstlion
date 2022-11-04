@@ -174,7 +174,22 @@ export const RELEASES: Release[] = [
     publicationDate: '2021-01-15',
     type: 'Single',
     artists: ['T.Lion'],
-    links: [{ platform: 'YouTube', link: 'https://youtu.be/DcK7Ye50bwE' }]
+    links: [
+      {
+        platform: 'Apple Music',
+        link: 'https://music.apple.com/fr/album/forgotten-dreams-single/1646612499'
+      },
+      { platform: 'Deezer', link: 'https://www.deezer.com/fr/album/359630177' },
+      {
+        platform: 'Spotify',
+        link: 'https://open.spotify.com/album/2wkAiEqnGxqhlHh4SFeo1H'
+      },
+      { platform: 'YouTube', link: 'https://youtu.be/DcK7Ye50bwE' },
+      {
+        platform: 'YouTube Music',
+        link: 'https://music.youtube.com/playlist?list=OLAK5uy_ln06xknPdNNIOqHTn7WfqKMGBZgeiQ190'
+      }
+    ]
   },
   {
     name: 'Thinking About You',
