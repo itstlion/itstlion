@@ -112,7 +112,22 @@ export const RELEASES: Release[] = [
     publicationDate: '2021-07-23',
     type: 'Single',
     artists: ['T.Lion'],
-    links: [{ platform: 'YouTube', link: 'https://youtu.be/LFEsSOw_vTQ' }]
+    links: [
+      {
+        platform: 'Apple Music',
+        link: 'https://music.apple.com/fr/album/sunny-window-single/1646641689'
+      },
+      { platform: 'Deezer', link: 'https://www.deezer.com/fr/album/359626457' },
+      {
+        platform: 'Spotify',
+        link: 'https://open.spotify.com/album/0v2Y2PQLxvNAHHGbig7gNi'
+      },
+      { platform: 'YouTube', link: 'https://youtu.be/LFEsSOw_vTQ' },
+      {
+        platform: 'YouTube Music',
+        link: 'https://music.youtube.com/playlist?list=OLAK5uy_nlLORhB41L8aS0NyhZGiazwZstbINn8-k'
+      }
+    ]
   },
   {
     name: 'Stillness in Darkness',
