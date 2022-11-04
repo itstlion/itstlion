@@ -134,7 +134,18 @@ export const RELEASES: Release[] = [
     publicationDate: '2021-06-25',
     type: 'Single',
     artists: ['T.Lion', 'Fe.Arts'],
-    links: [{ platform: 'YouTube', link: 'https://youtu.be/onS-lAVn7y0' }]
+    links: [
+      { platform: 'Deezer', link: 'https://www.deezer.com/fr/album/371840357' },
+      {
+        platform: 'Spotify',
+        link: 'https://open.spotify.com/album/1lx2X3BGWuRkxsiOmEEiNp'
+      },
+      { platform: 'YouTube', link: 'https://youtu.be/onS-lAVn7y0' },
+      {
+        platform: 'YouTube Music',
+        link: 'https://music.youtube.com/playlist?list=OLAK5uy_ka163OC85cMxOwdHNg5_D8SLZ7l8ZPjZ8'
+      }
+    ]
   },
   {
     name: 'Morning Light',
