@@ -152,7 +152,22 @@ export const RELEASES: Release[] = [
     publicationDate: '2021-05-07',
     type: 'EP',
     artists: ['T.Lion'],
-    links: [{ platform: 'YouTube', link: 'https://youtu.be/-Ge4FrPYznM' }]
+    links: [
+      {
+        platform: 'Apple Music',
+        link: 'https://music.apple.com/fr/album/morning-light-ep/1646641908'
+      },
+      { platform: 'Deezer', link: 'https://www.deezer.com/fr/album/359627727' },
+      {
+        platform: 'Spotify',
+        link: 'https://open.spotify.com/album/019uCxaIocuGd5OJ6eI53B'
+      },
+      { platform: 'YouTube', link: 'https://youtu.be/-Ge4FrPYznM' },
+      {
+        platform: 'YouTube Music',
+        link: 'https://music.youtube.com/playlist?list=OLAK5uy_kJg7OZdHPNAFH6XGhRQqZs9OvZFxUp20M'
+      }
+    ]
   },
   {
     name: 'Forgotten Dreams',
