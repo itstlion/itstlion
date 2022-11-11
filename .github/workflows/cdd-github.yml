@@ -17,4 +17,5 @@ jobs:
         uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
         with:
           angular_dist_build_folder: dist/itstlion
+          base_href: /web/
           github_access_token: ${{secrets.GITHUB_TOKEN}}
